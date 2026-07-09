@@ -1,0 +1,19 @@
+# LaTeX временные файлы
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.nav
+*.snm
+*.vrb
+
+# Системные файлы
+Thumbs.db
+.DS_Store

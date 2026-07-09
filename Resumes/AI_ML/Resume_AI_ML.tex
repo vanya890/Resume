@@ -1,0 +1,138 @@
+% !TEX program = xelatex
+\documentclass[10pt,a4paper]{article}
+
+% ---- Пакеты для XeLaTeX и кириллицы ----
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+\setotherlanguage{english}
+
+% ---- Шрифт с кириллицей ----
+\setmainfont{Liberation Serif}
+\setsansfont{Liberation Sans}
+\setmonofont{Liberation Mono}
+
+% ---- Поля и геометрия ----
+\usepackage[top=1.5cm, bottom=1.5cm, left=1.5cm, right=1.5cm]{geometry}
+\usepackage{parskip}
+\setlength{\parindent}{0pt}
+
+% ---- Продвинутые ссылки ----
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+}
+
+% ---- Полезные пакеты ----
+\usepackage{enumitem}
+\setlist{nosep, left=0pt}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{titlesec}
+
+% ---- Настройка заголовков разделов ----
+\titleformat{\section}{\Large\bfseries\uppercase}{}{0em}{}[\vspace{-0.3em}\rule{\textwidth}{0.5pt}]
+\titlespacing*{\section}{0pt}{0.8em}{0.3em}
+
+\titleformat{\subsection}{\large\bfseries}{}{0em}{}
+\titlespacing*{\subsection}{0pt}{0.4em}{0.2em}
+
+% ---- Пользовательские команды ----
+\newcommand{\projectEntry}[3]{\textbf{#1} \hfill \textit{#2}\par #3\par\vspace{0.3em}}
+
+% ---- Общие данные (имя, телефон, email и т.д.) ----
+\input{../Common/Resume_Common}
+
+\begin{document}
+
+% ============================================================
+% ЗАГОЛОВОК
+% ============================================================
+\makeHeader{Специалист по AI/ML / Промпт-инженер}
+
+% ============================================================
+% О СЕБЕ
+% ============================================================
+\section{О себе}
+
+Специалист в области искусственного интеллекта и машинного обучения. Имею практический опыт работы с различными AI-сервисами и моделями, включая Claude, Yandex AI, Google AI Studio, Groq, Qwen Coder. Занимался развёртыванием локальных LLM (Unsloth, LM Studio, Ollama), обучением LoRA-моделей, генерацией изображений (Stable Diffusion, ComfyUI). Разрабатывал собственные нейросетевые модели (перцептроны, CNN) и AI-агентов для автоматизации. Владею промпт-инжинирингом, составлением JSON schema для структурированного вывода моделей.
+
+% ============================================================
+% ОПЫТ РАБОТЫ (ПРОЕКТНАЯ ДЕЯТЕЛЬНОСТЬ)
+% ============================================================
+\section{Опыт работы}
+
+\subsection{Проектная деятельность / Фриланс}
+
+\projectEntry{Разработка AI-агента для автоматической публикации статей}{2025}
+{Создал бота для сайта, который автоматически генерировал и публиковал статьи на актуальные темы. Использовал различные языковые модели: \textbf{Claude, Yandex AI, Google AI Studio, Groq, Qwen Coder}. Настроил пайплайн: генерация контента $\to$ проверка $\to$ автоматическая публикация.}
+
+\projectEntry{Fullstack-разработчик (AI Chat Game)}{2024–2025}
+{Создал веб-приложение для чата с AI-персонажами на \textbf{React 18 + TypeScript + Vite}. Интегрировал поддержку нескольких AI-провайдеров: \textbf{OpenAI, Ollama, LM Studio, Groq}. Реализовал систему памяти (кратко- и долгосрочную), дашборд аналитики токенов с разбивкой по моделям.}
+
+\projectEntry{Fullstack-разработчик (InfinityAI Novel)}{2025–2026}
+{Разработал AI-визуальную новеллу на \textbf{React 19 + TypeScript + Vite 7 + Tailwind CSS 4}. Интегрировал генерацию сюжета через \textbf{OpenRouter API} и локальные модели \textbf{LM Studio} с \textbf{JSON Schema structured output}. Реализовал генерацию портретов персонажей через \textbf{ComfyUI}.}
+
+\projectEntry{Исследователь (AI/ML — нейросети и обучение)}{2024–2026}
+{Выполнил цикл лабораторных и учебных проектов по искусственному интеллекту и машинному обучению:
+\begin{itemize}
+    \item Реализовал самописный \textbf{перцептрон} для распознавания чисел на Python (NumPy)
+    \item Разработал систему определения входящих/выходящих людей из автобуса с использованием \textbf{OpenCV} и компьютерного зрения
+    \item Реализовал управление беспилотным 2D-роботом в гоночной симуляции (обучение с подкреплением)
+    \item Работал с \textbf{Scikit-learn, NumPy, Matplotlib} для задач классификации и визуализации
+\end{itemize}}
+
+\projectEntry{Работа с моделями генерации изображений}{2024–2025}
+{Настраивал пайплайны генерации изображений в \textbf{Stable Diffusion} и \textbf{ComfyUI}. Работал с \textbf{ControlNet} для управления генерацией. Обучал собственные \textbf{LoRA-модели} на подготовленных датасетах.}
+
+\projectEntry{Развёртывание локальных LLM}{2024–2025}
+{Устанавливал и настраивал локальные языковые модели с использованием \textbf{Unsloth, LM Studio, Ollama, llama.cpp}. Настраивал инференс, оптимизировал производительность, работал с открытыми весами моделей.}
+
+\projectEntry{SEO-оптимизация с использованием AI (Stroy-Materiali-24.ru)}{2024}
+{Разработал инструменты для SEO-оптимизации сайта строительных материалов. Использовал \textbf{AI-промпты} для генерации контента, \textbf{Яндекс API} и \textbf{Яндекс.Вебмастер} для анализа поисковых запросов.}
+
+% ============================================================
+% ПРОМПТ-ИНЖИНИРИНГ
+% ============================================================
+\section{Промпт-инжиниринг}
+
+\begin{itemize}
+    \item Разработка структурированных промптов для разных LLM (Claude, GPT, Yandex AI, Qwen)
+    \item Создание \textbf{JSON schema} для управления структурированным выводом моделей
+    \item Оптимизация промптов под конкретные задачи: генерация кода, контента, анализ данных
+    \item Работа с system prompt, few-shot learning, chain-of-thought
+    \item Интеграция промптов в приложения через API
+\end{itemize}
+
+% ============================================================
+% ОБРАЗОВАНИЕ
+% ============================================================
+\makeEducation
+
+% ============================================================
+% НАВЫКИ
+% ============================================================
+\section{Навыки}
+
+\begin{tabular}{p{3.5cm} p{12cm}}
+    \textbf{AI-сервисы:} & Claude, Cursor, Cline, Antigravity, Google AI Studio, Yandex AI, Grok, Qwen Coder, OpenAI API \\
+    \textbf{Локальные LLM:} & Unsloth, LM Studio, Ollama, llama.cpp, OpenRouter \\
+    \textbf{Генерация изображений:} & Stable Diffusion, ComfyUI, LoRA, ControlNet \\
+    \textbf{Нейросети/ML:} & Перцептроны, CNN, OpenCV, NumPy, Scikit-learn, PyTorch (базовый) \\
+    \textbf{Промпт-инжиниринг:} & JSON schema, system prompt, few-shot, chain-of-thought \\
+    \textbf{Языки:} & Python, TypeScript, JavaScript, SQL \\
+    \textbf{Инструменты:} & Git, Docker, Jupyter Notebook, Google Colab \\
+    \textbf{Языки:} & Русский — родной, Английский — A2 (элементарный)
+\end{tabular}
+
+% ============================================================
+% ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ
+% ============================================================
+\makeFooter{проекты по AI/ML, нейросетям, интеграции LLM}{Интеграция AI-моделей, промпт-инжиниринг, генерация контента, компьютерное зрение, обучение нейросетей}
+
+\end{document}

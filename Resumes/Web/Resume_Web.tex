@@ -1,0 +1,126 @@
+% !TEX program = xelatex
+\documentclass[10pt,a4paper]{article}
+
+% ---- Пакеты для XeLaTeX и кириллицы ----
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+\setotherlanguage{english}
+
+% ---- Шрифт с кириллицей ----
+\setmainfont{Liberation Serif}
+\setsansfont{Liberation Sans}
+\setmonofont{Liberation Mono}
+
+% ---- Поля и геометрия ----
+\usepackage[top=1.5cm, bottom=1.5cm, left=1.5cm, right=1.5cm]{geometry}
+\usepackage{parskip}
+\setlength{\parindent}{0pt}
+
+% ---- Продвинутые ссылки ----
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+}
+
+% ---- Полезные пакеты ----
+\usepackage{enumitem}
+\setlist{nosep, left=0pt}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{titlesec}
+
+% ---- Настройка заголовков разделов ----
+\titleformat{\section}{\Large\bfseries\uppercase}{}{0em}{}[\vspace{-0.3em}\rule{\textwidth}{0.5pt}]
+\titlespacing*{\section}{0pt}{0.8em}{0.3em}
+
+\titleformat{\subsection}{\large\bfseries}{}{0em}{}
+\titlespacing*{\subsection}{0pt}{0.4em}{0.2em}
+
+% ---- Пользовательские команды ----
+\newcommand{\resumeItem}[2]{\textbf{#1} --- #2\\}
+\newcommand{\projectEntry}[3]{\textbf{#1} \hfill \textit{#2}\par #3\par\vspace{0.3em}}
+
+% ---- Общие данные (имя, телефон, email и т.д.) ----
+\input{../Common/Resume_Common}
+
+\begin{document}
+
+% ============================================================
+% ЗАГОЛОВОК
+% ============================================================
+\makeHeader{Разработчик веб- и мультимедийных приложений (Fullstack)}
+
+% ============================================================
+% О СЕБЕ
+% ============================================================
+\section{О себе}
+
+Fullstack-разработчик с опытом создания веб-приложений, desktop-программ и AI-сервисов. Выпускник Московского политехнического университета по направлению «Информатика и вычислительная техника» (киберфизические системы). Владею современным стеком: \textbf{React, TypeScript, Node.js, PHP (Laravel), Python, Docker}. Разработал и опубликовал более 10 проектов на GitHub, включая образовательный 3D-симулятор робототехники (ВКР), AI-чат с персонажами и AI-визуальную новеллу. Ориентирован на результат, быстро осваиваю новые технологии, умею работать как в команде, так и самостоятельно.
+
+% ============================================================
+% ОПЫТ РАБОТЫ (ПРОЕКТНАЯ ДЕЯТЕЛЬНОСТЬ)
+% ============================================================
+\section{Опыт работы}
+
+\subsection{Проектная деятельность / Фриланс}
+
+\projectEntry{Fullstack-разработчик (EduRoboSim — ВКР)}{2025--2026}
+{Разработал образовательный 3D-симулятор робототехники на стеке \textbf{Tauri (Rust + WebView2) + React 18 + TypeScript + Three.js (R3F)}. Спроектировал и реализовал собственный язык программирования (EduScript) с лексером, парсером (AST) и виртуальной машиной на TypeScript. Внедрил физический движок 2D OBB-коллизий, систему датчиков (8 дальномеров, энкодер, гироскоп) и редактор уровней в формате YAML. Применены принципы SOLID и паттерн MVC.}
+
+\projectEntry{Fullstack-разработчик (AI Chat Game)}{2024--2025}
+{Создал веб-приложение для чата с AI-персонажами на \textbf{React 18 + TypeScript + Vite}. Реализовал систему памяти (кратко- и долгосрочную), визуальный редактор персонажей, дашборд аналитики токенов. Интегрировал поддержку нескольких AI-провайдеров: OpenAI, Ollama, LM Studio, Groq. Использовал Zustand для управления состоянием, IndexedDB для хранения данных, i18next для мультиязычности.}
+
+\projectEntry{Fullstack-разработчик (InfinityAI Novel)}{2025--2026}
+{Разработал AI-визуальную новеллу на \textbf{React 19 + TypeScript + Vite 7 + Tailwind CSS 4}. Интегрировал генерацию сюжета через OpenRouter API и локальные модели LM Studio с JSON Schema structured output. Реализовал генерацию портретов персонажей через ComfyUI, систему автосохранения и серверное хранение данных.}
+
+\projectEntry{Разработчик (laravelShop --- диплом колледжа)}{2022}
+{Разработал интернет-магазин на \textbf{Laravel (PHP)} с каталогом товаров, корзиной, оформлением заказов и административной панелью. Использовал MySQL, Blade-шаблоны, Bootstrap.}
+
+\projectEntry{Разработчик (Minecraft Server Project)}{2024--2025}
+{Развернул полностью контейнеризованный игровой сервер на \textbf{Purpur 1.21} с лендинг-сайтом (\textbf{React + TypeScript + Vite}) в Docker-окружении. Разработал Windows-лаунчер на Electron с автоустановкой Java и параллельной загрузкой ассетов.}
+
+\subsection{Практика}
+
+\projectEntry{Техник-программист (ГБПОУ «Юго-Запад»)}{Апрель--Июнь 2022}
+{Проверка работоспособности ПК, обновление и установка ОС и ПО, настройка сетевых подключений, установка принтеров и периферийного оборудования, помощь в организации ЕГЭ.}
+
+\projectEntry{Оператор БД (Издательство «Просвещение»)}{Май--Июль 2021}
+{Заполнение базы данных информацией, описание изображений для поиска по ключевым словам, подготовка данных для редакций.}
+
+\projectEntry{Оператор ПК (ГБПОУ «Юго-Запад»)}{Ноябрь 2020 --- Январь 2021}
+{Ввод и редактирование данных в программе \textbf{1С:Библиотека}, обучение сотрудников работе с системой на базовом уровне.}
+
+% ============================================================
+% ОБРАЗОВАНИЕ
+% ============================================================
+\makeEducation
+
+% ============================================================
+% НАВЫКИ
+% ============================================================
+\section{Навыки}
+
+\begin{tabular}{p{3.5cm} p{12cm}}
+    \textbf{Языки программирования:} & TypeScript, JavaScript, PHP, Python, C\#, Rust (базовый), SQL \\
+    \textbf{Frontend:} & React 18/19, TypeScript, Vite, Tailwind CSS, Three.js / React Three Fiber, A-Frame, HTML5, CSS3 \\
+    \textbf{Backend:} & Node.js, Express.js, Laravel, REST API, WebSocket \\
+    \textbf{Базы данных:} & MySQL, SQLite, IndexedDB, Oracle (базовый) \\
+    \textbf{Инструменты:} & Git, Docker, Docker Compose, Nginx, CI/CD \\
+    \textbf{Фреймворки:} & Tauri (Rust + WebView2), .NET (Windows Forms), Unity \\
+    \textbf{AI/ML:} & OpenAI API, Ollama, LM Studio, ComfyUI, LangChain (базовый) \\
+    \textbf{Методологии:} & Agile, Scrum, SOLID, MVC, ООП \\
+    \textbf{Языки:} & Русский --- родной, Английский --- A2 (элементарный)
+\end{tabular}
+
+% ============================================================
+% ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ
+% ============================================================
+\makeFooter{более 16 репозиториев с открытым исходным кодом}{Разработка веб-приложений (SPA, SSR), проектирование архитектуры ПО, создание REST API, работа с базами данных, контейнеризация (Docker), интеграция AI-моделей}
+
+\end{document}
