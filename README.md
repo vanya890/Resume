@@ -117,5 +117,5 @@ Resume/
 ## Контакты
 
 - **Email:** vanya.kuzyk1@gmail.com
-- **Telegram:** @vanya890
+- **Telegram:** @CODY890
 - **GitHub:** [github.com/vanya890](https://github.com/vanya890)
