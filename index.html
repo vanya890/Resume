@@ -63,7 +63,7 @@ section{position:relative;z-index:2;max-width:1240px;margin:0 auto;padding:110px
 .tl-item p{color:var(--muted);font-size:.92rem}
 .resumes{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
 .resume-card{padding:26px;border:1px solid var(--border);border-radius:20px;background:var(--card);backdrop-filter:blur(10px);transition:.35s;display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden}
-.resume-card::after{content:'';position:absolute;top:-50%;right:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(99,140,255,.08),transparent 60%);opacity:0;transition:.4s}.resume-card:hover::after{opacity:1}
+.resume-card::after{content:'';position:absolute;top:-50%;right:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(99,140,255,.08),transparent 60%);opacity:0;transition:.4s;pointer-events:none}.resume-card:hover::after{opacity:1}
 .resume-card:hover{transform:translateY(-7px);border-color:var(--accent);box-shadow:var(--glow)}
 .resume-card .tag{display:inline-block;font-size:.75rem;padding:5px 12px;border-radius:999px;background:rgba(99,140,255,.15);color:var(--accent);width:fit-content;font-weight:600}
 .resume-card h3{font-size:1.2rem;font-weight:700}
