@@ -1,5 +1,8 @@
 # Резюме — Кузык Иван Романович
 
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-638cff?style=for-the-badge&logo=github)](https://vanya890.github.io/Resume/)
+[![Resume PDF](https://img.shields.io/badge/Resume-PDF-a855f7?style=for-the-badge&logo=adobeacrobatreader)](Resumes/Universal/Resume_Universal.pdf)
+
 **Техник-программист / Разработчик / Специалист широкого профиля**
 
 📍 Москва, м. Бульвар Дмитрия Донского  
