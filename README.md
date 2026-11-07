@@ -105,6 +105,32 @@ Resume/
 
 ---
 
+## Проекты на GitHub
+
+### Профессиональные и инженерные
+- [whitelist-bypass](https://github.com/vanya890/whitelist-bypass) — туннелирование трафика через видеозвонки для обхода белых списков
+- [RoboSim](https://github.com/vanya890/RoboSim) — симулятор робототехники (ROS/Gazebo/3D)
+- [SimWeb](https://github.com/vanya890/SimWeb) — EduRoboSim, 3D-симулятор на Tauri + React + Three.js
+- [VRSyncSite](https://github.com/vanya890/VRSyncSite) — VR-синхронизация и веб-порталы
+- [laravelShop](https://github.com/vanya890/laravelShop) — интернет-магазин на Laravel
+- [clover](https://github.com/vanya890/clover) — ROS-фреймворк для дронов PX4
+- [TurtleBot3-Lab](https://github.com/vanya890/TurtleBot3-Lab) — лабораторные с TurtleBot3
+- [CodyModTranslator](https://github.com/vanya890/CodyModTranslator) — CLI-переводчик модов (ESP/ESM)
+- [ST24-ProductHelper](https://github.com/vanya890/ST24-ProductHelper) — создание карточек товаров
+- [ST24-Check](https://github.com/vanya890/ST24-Check) — проверка данных ST24
+- [deepseek-web-search](https://github.com/vanya890/deepseek-web-search) — Codex-скилл для DeepSeek
+- [stroy-materiali-24-skill](https://github.com/vanya890/stroy-materiali-24-skill) — Agent Skill для магазина стройматериалов
+- [study-projects](https://github.com/vanya890/study-projects) — учебные проекты Мосполитеха
+- [CAWP](https://github.com/vanya890/CAWP) / [CQT](https://github.com/vanya890/CQT) — CodyAiWorldPlayer, SKSE-плагин для Skyrim
+- [AI_Study_Colab](https://github.com/vanya890/AI_Study_Colab) — учебные ноутбуки по AI
+
+### Игровые, личные и развлекательные
+- [minecraft-comes-alive](https://github.com/vanya890/minecraft-comes-alive) — Minecraft-мод: жители становятся людьми
+- [kazari-jump](https://github.com/vanya890/kazari-jump) — one-tap Telegram runner
+- [kazari-pulse](https://github.com/vanya890/kazari-pulse) — аркадная Telegram Mini App
+- [AIChatGame](https://github.com/vanya890/AIChatGame) — веб-чат с AI-персонажами
+- [DeNoiseDroid](https://github.com/vanya890/DeNoiseDroid) — шумоподавление для Android
+
 ## Планы
 
 - [ ] Адаптация резюме под конкретные вакансии (подгонка ключевых слов)
