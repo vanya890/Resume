@@ -100,6 +100,33 @@ def main() -> int:
             if url.scheme != "https" or not url.netloc:
                 fail(f"Project {title!r} has a non-HTTPS link: {link.get('url')!r}")
 
+    # Validate the canonical data model and cross-file references.
+    data_dir = Path(__file__).resolve().parents[1] / "data"
+    try:
+        profile_data = json.loads((data_dir / "profile.json").read_text(encoding="utf-8"))
+        skills_data = json.loads((data_dir / "skills.json").read_text(encoding="utf-8"))
+        resume_data = json.loads((data_dir / "resume-profiles.json").read_text(encoding="utf-8"))
+        project_ids = [item.get("id") for item in projects]
+        if any(not item for item in project_ids) or len(project_ids) != len(set(project_ids)):
+            fail("Project IDs must be present and unique")
+        project_id_set = set(project_ids)
+        for skill in skills_data.get("skills", []):
+            for evidence in skill.get("evidence", []):
+                if evidence.get("project_id") not in project_id_set:
+                    fail(f"Unknown project evidence for skill {skill.get('id')}: {evidence.get('project_id')}")
+            if skill.get("assessment") not in {"pending", "confirmed"}:
+                fail(f"Invalid assessment state for skill {skill.get('id')}")
+        for resume in resume_data.get("profiles", []):
+            for project_id in resume.get("project_ids", []):
+                if project_id not in project_id_set:
+                    fail(f"Unknown project {project_id} in resume profile {resume.get('id')}")
+        if profile_data.get("privacy", {}).get("publish_original_documents") is not False:
+            fail("Original education documents must remain unpublished")
+        if len(resume_data.get("profiles", [])) != 6:
+            fail("Expected exactly six resume profiles")
+    except (OSError, json.JSONDecodeError, KeyError, TypeError) as error:
+        fail(f"Canonical data validation failed: {error}")
+
     expected_pdfs = [
         "Resumes/AI_ML/Resume_AI_ML.pdf",
         "Resumes/Data/Resume_Data.pdf",
