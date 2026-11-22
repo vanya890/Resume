@@ -80,6 +80,10 @@
         {
           "project_id": "qsp-ai-generator",
           "context": "Интеграция Gemini и обработка структурированных ответов"
+        },
+        {
+          "project_id": "stroy-materiali-24-hub2",
+          "context": "Интеграция Gemini и OpenAI-совместимых API в прикладное приложение"
         }
       ]
     },
@@ -96,6 +100,18 @@
         {
           "project_id": "laravelshop",
           "context": "Базы данных учебного интернет-магазина"
+        }
+      ]
+    },
+    {
+      "id": "ai-workflow-automation",
+      "name": "Автоматизация рабочих процессов с AI",
+      "category": "AI и автоматизация",
+      "assessment": "pending",
+      "evidence": [
+        {
+          "project_id": "stroy-materiali-24-hub2",
+          "context": "Автоматизация генерации статей, карточек товаров и промоматериалов на основе товарных данных"
         }
       ]
     }
