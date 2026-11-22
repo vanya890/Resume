@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5f7fb" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#f5f7fb">
   <meta name="description" content="Портфолио и резюме Ивана Кузыка: разработка программного обеспечения, робототехника, AI/ML и киберфизические системы.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Иван Кузык — разработчик ПО и киберфизических систем">
@@ -28,7 +28,7 @@
   </script>
   <style>
     :root {
-      color-scheme: light dark;
+      color-scheme: light;
       --bg: #f5f7fb;
       --surface: #ffffff;
       --surface-muted: #eef2f8;
@@ -235,17 +235,27 @@
       .project-card, .resume-card, .education-card { box-shadow: none; break-inside: avoid; }
       a { color: black; }
     }
-@media (prefers-color-scheme: dark) {
-:root { --bg:#101521; --surface:#171f2e; --surface-muted:#202b3d; --ink:#edf2fb; --ink-soft:#c3cede; --muted:#9aa9bf; --line:#303d52; --brand:#8da7ff; --brand-dark:#a8baff; --teal:#62d0d0; --shadow:0 18px 50px rgba(0,0,0,.28); }
-body { background:radial-gradient(ellipse at 88% 0%,rgba(91,119,220,.16),transparent 32rem),var(--bg); }
-.site-header { background:rgba(16,21,33,.92); } .nav-links { background:var(--surface); }
-.profile-panel { background:linear-gradient(150deg,#1b2638,#172032); } .profile-icon { background:#293858;color:#b6c7ff; }
-.tag { background:#27385f;color:#dbe4ff; } .skill-tags .tag { background:var(--surface-muted);color:var(--ink-soft); }
-.focus-card { background:#0b111d; } .search-input { color:var(--ink);background:var(--surface);border-color:var(--line); }
-.note { background:#173337;color:#b8e7e2; } .button-primary { color:#101521;background:#a8baff; }
-.button-primary:hover { color:#101521;background:#c1ceff; } .button-secondary { color:var(--ink);background:var(--surface); }
-.filter-button[aria-pressed="true"] { color:#101521;background:#a8baff;border-color:#a8baff; } .skip-link { background:#edf2fb;color:#101521; }
-}  </style>
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg:#101521; --surface:#171f2e; --surface-muted:#202b3d; --ink:#edf2fb;
+  --ink-soft:#c3cede; --muted:#9aa9bf; --line:#303d52; --brand:#8da7ff;
+  --brand-dark:#a8baff; --teal:#62d0d0; --shadow:0 18px 50px rgba(0,0,0,.28);
+}
+:root[data-theme="dark"] body { background:radial-gradient(ellipse at 88% 0%,rgba(91,119,220,.16),transparent 32rem),var(--bg); }
+:root[data-theme="dark"] .site-header { background:rgba(16,21,33,.92); }
+:root[data-theme="dark"] .nav-links { background:var(--surface); }
+:root[data-theme="dark"] .profile-panel { background:linear-gradient(150deg,#1b2638,#172032); }
+:root[data-theme="dark"] .profile-icon { background:#293858;color:#b6c7ff; }
+:root[data-theme="dark"] .tag { background:#27385f;color:#dbe4ff; }
+:root[data-theme="dark"] .skill-tags .tag { background:var(--surface-muted);color:var(--ink-soft); }
+:root[data-theme="dark"] .focus-card { background:#0b111d; }
+:root[data-theme="dark"] .search-input { color:var(--ink);background:var(--surface);border-color:var(--line); }
+:root[data-theme="dark"] .note { background:#173337;color:#b8e7e2; }
+:root[data-theme="dark"] .button-primary { color:#101521;background:#a8baff; }
+:root[data-theme="dark"] .button-primary:hover { color:#101521;background:#c1ceff; }
+:root[data-theme="dark"] .button-secondary { color:var(--ink);background:var(--surface); }
+:root[data-theme="dark"] .filter-button[aria-pressed="true"] { color:#101521;background:#a8baff;border-color:#a8baff; }
+:root[data-theme="dark"] .skip-link { background:#edf2fb;color:#101521; }  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти к содержимому</a>
