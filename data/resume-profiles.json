@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "profiles": [
+    {
+      "id": "AI_ML",
+      "title": "Junior AI/ML Developer / AI Integration Developer",
+      "target": "AI-интеграции, прикладные LLM-системы и обработка данных",
+      "project_ids": [
+        "qsp-ai-generator",
+        "codymodtranslator",
+        "stroy-materiali-24-skill",
+        "deepseek-web-search"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "Data",
+      "title": "Junior Data Analyst / Data Developer",
+      "target": "Обработка данных, SQL, Python и визуализация",
+      "project_ids": [
+        "codymodtranslator",
+        "qsp-ai-generator"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "Engineer",
+      "title": "Software Engineer",
+      "target": "Разработка прикладного программного обеспечения и системная интеграция",
+      "project_ids": [
+        "edurobosim",
+        "codymodtranslator",
+        "laravelshop",
+        "denoisedroid"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "Robotics",
+      "title": "Junior Robotics / Cyber-Physical Systems Developer",
+      "target": "Робототехническое моделирование, симуляция и программирование CPS",
+      "project_ids": [
+        "edurobosim",
+        "robosim"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "Universal",
+      "title": "Software Developer",
+      "target": "Общая разработка ПО с инженерным уклоном",
+      "project_ids": [
+        "edurobosim",
+        "qsp-ai-generator",
+        "codymodtranslator",
+        "laravelshop",
+        "denoisedroid"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "Web",
+      "title": "Junior Web Developer",
+      "target": "Frontend и full-stack веб-разработка",
+      "project_ids": [
+        "qsp-ai-generator",
+        "laravelshop",
+        "kazari-jump",
+        "kazari-pulse"
+      ],
+      "status": "draft"
+    }
+  ]
+}

@@ -31,9 +31,9 @@ PDF собираются из исходников XeLaTeX автоматиче�
 ```text
 .
 ├── .github/workflows/pages.yml  # CI, сборка PDF и деплой GitHub Pages
-├── data/projects.json           # единый реестр проектов для сайта
+├── data/                         # профиль, проекты, навыки и специализации
 ├── index.html                   # адаптивный сайт-портфолио
-├── MasterData/                  # рабочая база навыков
+├── MasterData/                  # исходная инвентаризация навыков
 ├── Resumes/
 │   ├── Common/                  # общие персональные данные и образование
 │   ├── AI_ML/
@@ -42,6 +42,9 @@ PDF собираются из исходников XeLaTeX автоматиче�
 │   ├── Robotics/
 │   ├── Universal/
 │   └── Web/
+├── docs/ARCHITECTURE.md         # правила единого источника данных
+├── schemas/                     # JSON Schema для проверки структуры
+├── Resumes/Typst/               # пилот миграции на Typst
 └── scripts/
     ├── build-resumes.sh         # сборка всех PDF
     └── validate_site.py         # проверка ссылок и структуры сайта
@@ -60,7 +63,9 @@ sudo apt-get install -y latexmk texlive-xetex texlive-lang-cyrillic texlive-late
 python3 scripts/validate_site.py site
 ```
 
-Сценарий собирает шесть PDF из исходников в `Resumes/*/*.tex`, размещает их в каталоге `site/` и запускает проверку внутренних ссылок и артефактов.
+Сценарий собирает шесть PDF из исходников в `Resumes/*/*.tex`, копирует единый каталог `data/` в `site/` и запускает проверку ссылок, структуры данных, связей навыков с проектами и профилей резюме.
+
+Структура источников истины описана в [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md). Уровни навыков пока помечены как ожидающие подтверждения: они не назначаются автоматически по одному лишь факту наличия проекта. Typst находится на стадии пилотной проверки; LaTeX остаётся production-генератором до сравнения всех шести PDF.
 
 ## GitHub Actions
 

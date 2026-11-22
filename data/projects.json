@@ -12,10 +12,23 @@
         "Разработаны физика столкновений OBB и система сенсоров",
         "Создан редактор уровней и визуализация движения робота"
       ],
-      "stack": ["Tauri", "Rust", "React", "TypeScript", "Three.js", "EduScript"],
+      "stack": [
+        "Tauri",
+        "Rust",
+        "React",
+        "TypeScript",
+        "Three.js",
+        "EduScript"
+      ],
       "links": [
-        { "label": "Исходный код", "url": "https://github.com/vanya890/SimWeb" }
-      ]
+        {
+          "label": "Исходный код",
+          "url": "https://github.com/vanya890/SimWeb"
+        }
+      ],
+      "id": "edurobosim",
+      "visibility": "public",
+      "evidence_status": "repository-reviewed"
     },
     {
       "title": "RoboSim — конструктор и симулятор роботов",
@@ -26,10 +39,20 @@
         "Репозиторий содержит Unity-проект (Unity 2022.3)",
         "Описание функциональности в README отмечено как находящееся в разработке"
       ],
-      "stack": ["Unity", "C#", "Visual Scripting"],
+      "stack": [
+        "Unity",
+        "C#",
+        "Visual Scripting"
+      ],
       "links": [
-        { "label": "Исходный код", "url": "https://github.com/vanya890/RoboSim" }
-      ]
+        {
+          "label": "Исходный код",
+          "url": "https://github.com/vanya890/RoboSim"
+        }
+      ],
+      "id": "robosim",
+      "visibility": "public",
+      "evidence_status": "repository-reviewed"
     },
     {
       "title": "QSP AI Generator",
@@ -41,10 +64,22 @@
         "Добавлены проверки и очистка структурированных ответов модели",
         "В репозитории присутствуют тесты игровых подсистем и диагностики AI API"
       ],
-      "stack": ["React", "TypeScript", "Vite", "Gemini API", "SQLite"],
+      "stack": [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Gemini API",
+        "SQLite"
+      ],
       "links": [
-        { "label": "Исходный код", "url": "https://github.com/vanya890/CAWP" }
-      ]
+        {
+          "label": "Исходный код",
+          "url": "https://github.com/vanya890/CAWP"
+        }
+      ],
+      "id": "qsp-ai-generator",
+      "visibility": "public",
+      "evidence_status": "repository-reviewed"
     },
     {
       "title": "CodyModTranslator",
@@ -55,10 +90,23 @@
         "Реализованы разбор игровых ресурсов и пакетная обработка",
         "Предусмотрены CLI, кэш SQLite и сборка исполняемого приложения"
       ],
-      "stack": ["Python", "CTranslate2", "SQLite", "Typer", "pytest", "CUDA"],
+      "stack": [
+        "Python",
+        "CTranslate2",
+        "SQLite",
+        "Typer",
+        "pytest",
+        "CUDA"
+      ],
       "links": [
-        { "label": "Исходный код", "url": "https://github.com/vanya890/CodyModTranslator" }
-      ]
+        {
+          "label": "Исходный код",
+          "url": "https://github.com/vanya890/CodyModTranslator"
+        }
+      ],
+      "id": "codymodtranslator",
+      "visibility": "public",
+      "evidence_status": "repository-reviewed"
     },
     {
       "title": "laravelShop",
@@ -69,10 +117,23 @@
         "Реализованы основные сценарии электронного магазина",
         "Использованы серверные шаблоны Blade и реляционная база данных"
       ],
-      "stack": ["PHP", "Laravel", "MySQL", "SQLite", "Blade", "Bootstrap"],
+      "stack": [
+        "PHP",
+        "Laravel",
+        "MySQL",
+        "SQLite",
+        "Blade",
+        "Bootstrap"
+      ],
       "links": [
-        { "label": "Исходный код", "url": "https://github.com/vanya890/laravelShop" }
-      ]
+        {
+          "label": "Исходный код",
+          "url": "https://github.com/vanya890/laravelShop"
+        }
+      ],
+      "id": "laravelshop",
+      "visibility": "public",
+      "evidence_status": "repository-reviewed"
     },
     {
       "title": "DeNoiseDroid",
@@ -83,52 +144,112 @@
         "Реализованы аудиообработка и пользовательский интерфейс для настройки результата",
         "Проект ориентирован на работу с аудио- и видеоматериалами"
       ],
-      "stack": ["Android", "Kotlin", "Jetpack Compose", "DSP"],
+      "stack": [
+        "Android",
+        "Kotlin",
+        "Jetpack Compose",
+        "DSP"
+      ],
       "links": [
-        { "label": "Исходный код", "url": "https://github.com/vanya890/DeNoiseDroid" }
-      ]
+        {
+          "label": "Исходный код",
+          "url": "https://github.com/vanya890/DeNoiseDroid"
+        }
+      ],
+      "id": "denoisedroid",
+      "visibility": "public",
+      "evidence_status": "repository-reviewed"
     },
     {
       "title": "Kazari Jump",
       "category": "Разработка ПО",
       "period": "Telegram Mini App",
       "description": "Однокнопочный аркадный раннер для Telegram с Canvas-рендерингом и управлением прыжками и препятствиями.",
-      "stack": ["TypeScript", "Canvas", "Vite", "Telegram Mini Apps"],
+      "stack": [
+        "TypeScript",
+        "Canvas",
+        "Vite",
+        "Telegram Mini Apps"
+      ],
       "links": [
-        { "label": "Исходный код", "url": "https://github.com/vanya890/kazari-jump" },
-        { "label": "Играть", "url": "https://vanya890.github.io/kazari-jump/" }
-      ]
+        {
+          "label": "Исходный код",
+          "url": "https://github.com/vanya890/kazari-jump"
+        },
+        {
+          "label": "Играть",
+          "url": "https://vanya890.github.io/kazari-jump/"
+        }
+      ],
+      "id": "kazari-jump",
+      "visibility": "public",
+      "evidence_status": "repository-reviewed"
     },
     {
       "title": "Kazari Pulse",
       "category": "Разработка ПО",
       "period": "Telegram Mini App",
       "description": "Аркадная игра-раннер с управлением импульсами, уровнями сложности, скинами, музыкой и рекордами.",
-      "stack": ["TypeScript", "Canvas", "Vite", "Telegram Mini Apps"],
+      "stack": [
+        "TypeScript",
+        "Canvas",
+        "Vite",
+        "Telegram Mini Apps"
+      ],
       "links": [
-        { "label": "Исходный код", "url": "https://github.com/vanya890/kazari-pulse" },
-        { "label": "Играть", "url": "https://vanya890.github.io/kazari-pulse/" }
-      ]
+        {
+          "label": "Исходный код",
+          "url": "https://github.com/vanya890/kazari-pulse"
+        },
+        {
+          "label": "Играть",
+          "url": "https://vanya890.github.io/kazari-pulse/"
+        }
+      ],
+      "id": "kazari-pulse",
+      "visibility": "public",
+      "evidence_status": "repository-reviewed"
     },
     {
       "title": "stroy-materiali-24-skill",
       "category": "AI и приложения",
       "period": "Agent Skill",
       "description": "Навык для AI-агентов, который помогает работать с каталогом магазина стройматериалов: искать товары, подбирать комплекты, формировать сметы и учитывать условия доставки.",
-      "stack": ["Python", "Agent Skills", "JSON", "Каталог данных"],
+      "stack": [
+        "Python",
+        "Agent Skills",
+        "JSON",
+        "Каталог данных"
+      ],
       "links": [
-        { "label": "Исходный код", "url": "https://github.com/vanya890/stroy-materiali-24-skill" }
-      ]
+        {
+          "label": "Исходный код",
+          "url": "https://github.com/vanya890/stroy-materiali-24-skill"
+        }
+      ],
+      "id": "stroy-materiali-24-skill",
+      "visibility": "public",
+      "evidence_status": "repository-reviewed"
     },
     {
       "title": "deepseek-web-search",
       "category": "Инструменты и автоматизация",
       "period": "Agent Skill",
       "description": "Инструмент для проведения исследований через веб-интерфейс DeepSeek с возвратом ответа и ссылок на использованные источники.",
-      "stack": ["Agent Skills", "Browser Automation", "Research"],
+      "stack": [
+        "Agent Skills",
+        "Browser Automation",
+        "Research"
+      ],
       "links": [
-        { "label": "Исходный код", "url": "https://github.com/vanya890/deepseek-web-search" }
-      ]
+        {
+          "label": "Исходный код",
+          "url": "https://github.com/vanya890/deepseek-web-search"
+        }
+      ],
+      "id": "deepseek-web-search",
+      "visibility": "public",
+      "evidence_status": "repository-reviewed"
     }
   ]
 }
