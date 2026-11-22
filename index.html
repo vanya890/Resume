@@ -1,246 +1,553 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Кузык Иван Романович — Резюме</title>
-<meta name="description" content="Резюме Кузыка Ивана Романовича — техник-программист, разработчик, специалист широкого профиля">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#070a14;--bg2:#0d1224;--card:rgba(18,26,48,.6);--border:rgba(99,140,255,.2);--text:#e8ecf4;--muted:#9aa6c0;--accent:#638cff;--accent2:#a855f7;--accent3:#22d3ee;--glow:0 0 40px rgba(99,140,255,.35);--glow2:0 0 60px rgba(168,85,247,.4)}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6;min-height:100vh}
-a{color:var(--accent3);text-decoration:none;transition:.2s}
-canvas#bg{position:fixed;inset:0;z-index:0;pointer-events:none}
-.noise{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(14px);background:rgba(7,10,20,.65);border-bottom:1px solid var(--border)}
-.nav-inner{max-width:1240px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
-.logo{font-weight:900;font-size:1.2rem;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent3));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-.02em}
-.nav-links{display:flex;gap:26px;font-size:.9rem}.nav-links a{color:var(--muted)}.nav-links a:hover{color:var(--text)}
-.lang{font-size:.8rem;padding:6px 12px;border:1px solid var(--border);border-radius:999px;color:var(--muted);cursor:pointer;background:var(--card)}.lang:hover{color:var(--text);border-color:var(--accent)}
-section{position:relative;z-index:2;max-width:1240px;margin:0 auto;padding:110px 24px}
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:100px}
-.hero h1{font-size:clamp(2.8rem,8vw,6rem);font-weight:900;line-height:1.02;letter-spacing:-.03em}
-.hero h1 .grad{background:linear-gradient(120deg,var(--accent),var(--accent2),var(--accent3),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent;background-size:300% 300%;animation:gradmove 8s ease infinite}
-@keyframes gradmove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-.hero .role{font-size:clamp(1.1rem,2.4vw,1.7rem);color:var(--muted);margin-top:18px;font-weight:500;max-width:720px}
-.hero .meta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;font-size:.92rem;color:var(--muted)}
-.hero .meta span{display:inline-flex;align-items:center;gap:7px;padding:9px 16px;border:1px solid var(--border);border-radius:999px;background:var(--card);backdrop-filter:blur(8px);transition:.3s}.hero .meta span:hover{border-color:var(--accent);transform:translateY(-2px)}
-.hero .cta{margin-top:40px;display:flex;gap:14px;flex-wrap:wrap}
-.btn{padding:15px 28px;border-radius:13px;font-weight:600;font-size:.95rem;transition:.3s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:8px;position:relative;overflow:hidden}
-.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;box-shadow:var(--glow)}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--glow2)}
-.btn-ghost{background:var(--card);color:var(--text);border:1px solid var(--border);backdrop-filter:blur(8px)}.btn-ghost:hover{background:rgba(99,140,255,.15);border-color:var(--accent)}
-.typing{display:inline-block;border-right:2px solid var(--accent3);padding-right:4px;animation:blink .8s steps(1) infinite}
-@keyframes blink{50%{border-color:transparent}}
-.section-title{font-size:clamp(2rem,4.5vw,3rem);font-weight:900;margin-bottom:12px;letter-spacing:-.02em}
-.section-title .accent{background:linear-gradient(135deg,var(--accent),var(--accent3));-webkit-background-clip:text;background-clip:text;color:transparent}
-.section-sub{color:var(--muted);margin-bottom:48px;max-width:680px;font-size:1.05rem}
-.about{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:start}
-.about p{color:var(--muted);margin-bottom:18px;font-size:1.08rem}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.stat{padding:24px;border:1px solid var(--border);border-radius:18px;background:var(--card);backdrop-filter:blur(10px);transition:.35s;position:relative;overflow:hidden}
-.stat::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(99,140,255,.08),transparent);opacity:0;transition:.35s}.stat:hover::before{opacity:1}
-.stat:hover{transform:translateY(-5px);border-color:var(--accent)}
-.stat .num{font-size:2.4rem;font-weight:900;background:linear-gradient(135deg,var(--accent),var(--accent3));-webkit-background-clip:text;background-clip:text;color:transparent}
-.stat .lbl{color:var(--muted);font-size:.88rem;margin-top:6px}
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.skill-card{padding:26px;border:1px solid var(--border);border-radius:20px;background:var(--card);backdrop-filter:blur(10px);transition:.35s;position:relative}
-.skill-card:hover{transform:translateY(-6px);border-color:var(--accent2);box-shadow:0 20px 40px rgba(168,85,247,.15)}
-.skill-card .ic{font-size:2rem;margin-bottom:12px}
-.skill-card h3{font-size:1.15rem;margin-bottom:10px;color:var(--accent3);font-weight:700}
-.skill-card p{color:var(--muted);font-size:.92rem;line-height:1.6}
-.skill-card ul{list-style:none;margin-top:10px}.skill-card ul li{color:var(--muted);font-size:.85rem;padding:4px 0;display:flex;align-items:center;gap:8px}.skill-card ul li::before{content:'▸';color:var(--accent)}
-.timeline{position:relative;padding-left:32px}.timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--accent),var(--accent2),transparent)}
-.tl-item{position:relative;margin-bottom:36px;padding:20px 22px;border:1px solid var(--border);border-radius:16px;background:var(--card);backdrop-filter:blur(8px);transition:.3s}
-.tl-item::before{content:'';position:absolute;left:-28px;top:24px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 16px var(--accent);border:3px solid var(--bg)}
-.tl-item:hover{border-color:var(--accent);transform:translateX(4px)}
-.tl-item h4{font-size:1.05rem;font-weight:700;margin-bottom:4px}
-.tl-item .when{color:var(--accent3);font-size:.85rem;font-family:'JetBrains Mono',monospace;margin-bottom:8px}
-.tl-item p{color:var(--muted);font-size:.92rem}
-.resumes{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-.resume-card{padding:26px;border:1px solid var(--border);border-radius:20px;background:var(--card);backdrop-filter:blur(10px);transition:.35s;display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden}
-.resume-card::after{content:'';position:absolute;top:-50%;right:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(99,140,255,.08),transparent 60%);opacity:0;transition:.4s;pointer-events:none}.resume-card:hover::after{opacity:1}
-.resume-card:hover{transform:translateY(-7px);border-color:var(--accent);box-shadow:var(--glow)}
-.resume-card .tag{display:inline-block;font-size:.75rem;padding:5px 12px;border-radius:999px;background:rgba(99,140,255,.15);color:var(--accent);width:fit-content;font-weight:600}
-.resume-card h3{font-size:1.2rem;font-weight:700}
-.resume-card p{color:var(--muted);font-size:.92rem;flex:1}
-.resume-card a{color:var(--accent3);font-weight:600;font-size:.92rem;display:inline-flex;align-items:center;gap:6px}
-.resume-card a:hover{gap:10px}
-.contact{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-.contact-info p{color:var(--muted);margin-bottom:14px;font-size:1.05rem}
-.contact-links{display:flex;flex-direction:column;gap:14px;margin-top:24px}
-.contact-link{display:flex;align-items:center;gap:14px;padding:16px 20px;border:1px solid var(--border);border-radius:14px;background:var(--card);backdrop-filter:blur(8px);transition:.3s}
-.contact-link:hover{border-color:var(--accent);transform:translateX(6px);background:rgba(99,140,255,.08)}
-.contact-link .ic{font-size:1.5rem;width:36px;text-align:center}
-.contact-link .txt .t{font-weight:600;font-size:.95rem}.contact-link .txt .s{color:var(--muted);font-size:.82rem}
-.bigemoji{font-size:10rem;opacity:.12;animation:float 6s ease-in-out infinite}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}
-footer{text-align:center;padding:48px 24px;color:var(--muted);font-size:.88rem;border-top:1px solid var(--border);position:relative;z-index:2}
-footer a{color:var(--accent)}
-.reveal{opacity:0;transform:translateY(36px);transition:opacity .9s ease,transform .9s ease}.reveal.visible{opacity:1;transform:none}
-.reveal-left{opacity:0;transform:translateX(-40px);transition:opacity .9s ease,transform .9s ease}.reveal-left.visible{opacity:1;transform:none}
-.marquee{overflow:hidden;white-space:nowrap;padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:rgba(99,140,255,.04);margin:60px 0;position:relative;z-index:2}
-.marquee-track{display:inline-block;animation:scroll 30s linear infinite}
-.marquee span{font-size:1.1rem;font-weight:600;color:var(--muted);margin:0 28px}
-.marquee span b{color:var(--accent)}
-@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@media (max-width:900px){.about,.contact{grid-template-columns:1fr}.nav-links{display:none}}
-@media (max-width:600px){section{padding:80px 18px}.hero h1{font-size:2.6rem}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <meta name="description" content="Портфолио и резюме Ивана Кузыка: разработка программного обеспечения, робототехника, AI/ML и киберфизические системы.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Иван Кузык — разработчик ПО и киберфизических систем">
+  <meta property="og:description" content="Проекты, технические компетенции, образование и резюме в PDF.">
+  <meta property="og:url" content="https://vanya890.github.io/Resume/">
+  <link rel="canonical" href="https://vanya890.github.io/Resume/">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Иван Кузык — разработчик ПО и киберфизических систем</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f7fb;
+      --surface: #ffffff;
+      --surface-muted: #eef2f8;
+      --ink: #172033;
+      --ink-soft: #3c4960;
+      --muted: #65738a;
+      --line: #dfe5ef;
+      --brand: #3157d5;
+      --brand-dark: #2444b4;
+      --teal: #087e83;
+      --shadow: 0 18px 50px rgba(28, 45, 78, .08);
+      --radius: 22px;
+      --content: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 88% 0%, rgba(49, 87, 213, .08), transparent 32rem),
+        var(--bg);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: var(--brand-dark); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: var(--teal); }
+    button, input { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 3px solid #e69a2e; outline-offset: 3px; border-radius: 5px; }
+    .skip-link {
+      position: absolute; left: 12px; top: -80px; z-index: 100;
+      padding: 10px 14px; border-radius: 10px; background: var(--ink); color: #fff;
+    }
+    .skip-link:focus { top: 10px; }
+    .container { width: min(var(--content), calc(100% - 40px)); margin-inline: auto; }
+    .site-header {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(255,255,255,.92); border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+    }
+    .nav-wrap { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand-mark {
+      display: inline-flex; align-items: center; gap: 11px; color: var(--ink);
+      font-weight: 800; letter-spacing: -.04em; text-decoration: none;
+    }
+    .brand-icon {
+      display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px;
+      color: white; background: linear-gradient(135deg, var(--brand), #0a9b9b); font-size: 15px;
+      letter-spacing: -.06em;
+    }
+    .nav-links { display: flex; align-items: center; gap: 23px; }
+    .nav-links a { color: var(--ink-soft); font-size: .9rem; font-weight: 650; text-decoration: none; }
+    .nav-links a:hover { color: var(--brand); }
+    .menu-toggle {
+      display: none; padding: 9px 13px; color: var(--ink); background: var(--surface);
+      border: 1px solid var(--line); border-radius: 11px; cursor: pointer;
+    }
+
+    .hero { padding: 88px 0 78px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr); gap: 52px; align-items: center; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px; margin: 0 0 18px;
+      color: var(--teal); font-size: .82rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 24px; height: 2px; background: currentColor; }
+    h1 { max-width: 800px; margin: 0; font-size: clamp(2.7rem, 6vw, 5rem); line-height: 1.02; letter-spacing: -.065em; }
+    .hero h1 span { color: var(--brand); }
+    .hero-lead { max-width: 760px; margin: 24px 0 0; color: var(--ink-soft); font-size: clamp(1.08rem, 2vw, 1.28rem); }
+    .hero-note { max-width: 730px; margin: 14px 0 0; color: var(--muted); font-size: .94rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      min-height: 48px; padding: 11px 18px; border: 1px solid transparent; border-radius: 13px;
+      font-weight: 750; text-decoration: none; transition: transform .18s ease, background .18s ease, border-color .18s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: #fff; background: var(--brand); box-shadow: 0 8px 22px rgba(49,87,213,.2); }
+    .button-primary:hover { color: #fff; background: var(--brand-dark); }
+    .button-secondary { color: var(--ink); background: var(--surface); border-color: var(--line); }
+    .button-secondary:hover { color: var(--brand); border-color: var(--brand); }
+    .profile-panel {
+      padding: 28px; border: 1px solid var(--line); border-radius: var(--radius);
+      background: linear-gradient(150deg, #fff, #f0f4fb); box-shadow: var(--shadow);
+    }
+    .profile-panel h2 { margin: 0 0 18px; font-size: 1rem; }
+    .profile-list { display: grid; gap: 15px; margin: 0; padding: 0; list-style: none; }
+    .profile-list li { display: grid; grid-template-columns: 30px 1fr; gap: 10px; align-items: start; color: var(--ink-soft); font-size: .94rem; }
+    .profile-list strong { display: block; color: var(--ink); font-size: .88rem; }
+    .profile-icon { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 9px; background: #e5ebfb; color: var(--brand); font-size: .8rem; font-weight: 800; }
+
+    .section { padding: 76px 0; }
+    .section-heading { max-width: 760px; margin-bottom: 34px; }
+    .section-kicker { margin: 0 0 9px; color: var(--teal); font-size: .78rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+    h2.section-title { margin: 0; font-size: clamp(2rem, 4vw, 3.1rem); line-height: 1.12; letter-spacing: -.05em; }
+    .section-description { margin: 13px 0 0; color: var(--muted); font-size: 1.03rem; }
+    .about-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 36px; }
+    .prose-card, .focus-card, .skill-card, .project-card, .resume-card, .timeline-item, .contact-card {
+      border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface);
+    }
+    .prose-card { padding: 30px; }
+    .prose-card p { margin: 0 0 15px; color: var(--ink-soft); }
+    .prose-card p:last-child { margin-bottom: 0; }
+    .focus-card { padding: 28px; background: var(--ink); color: white; }
+    .focus-card h3 { margin: 0 0 14px; font-size: 1.1rem; }
+    .focus-card p { margin: 0; color: #d2dced; }
+    .focus-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .tag {
+      display: inline-flex; align-items: center; padding: 5px 10px; border-radius: 99px;
+      background: #eaf0ff; color: #2749b4; font-size: .78rem; font-weight: 750;
+    }
+    .focus-card .tag { background: rgba(255,255,255,.12); color: #e7edff; }
+    .skills-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .skill-card { padding: 24px; }
+    .skill-card h3 { margin: 0 0 10px; font-size: 1.05rem; }
+    .skill-card p { margin: 0; color: var(--muted); font-size: .94rem; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 17px; }
+    .skill-tags .tag { background: var(--surface-muted); color: var(--ink-soft); font-weight: 650; }
+
+    .project-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 22px; }
+    .search-input {
+      min-width: min(100%, 290px); padding: 11px 14px; border: 1px solid var(--line); border-radius: 12px;
+      color: var(--ink); background: white;
+    }
+    .filter-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .filter-button {
+      padding: 8px 12px; border: 1px solid var(--line); border-radius: 999px;
+      color: var(--ink-soft); background: var(--surface); font-size: .84rem; font-weight: 700; cursor: pointer;
+    }
+    .filter-button[aria-pressed="true"] { border-color: var(--brand); color: white; background: var(--brand); }
+    .projects-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 17px; }
+    .project-card { display: flex; flex-direction: column; min-width: 0; padding: 25px; box-shadow: 0 8px 26px rgba(28,45,78,.035); }
+    .project-card h3 { margin: 9px 0 8px; font-size: 1.22rem; letter-spacing: -.025em; }
+    .project-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; color: var(--muted); font-size: .78rem; font-weight: 750; }
+    .project-card p { margin: 0; color: var(--ink-soft); font-size: .94rem; }
+    .project-points { margin: 14px 0 0; padding-left: 19px; color: var(--muted); font-size: .88rem; }
+    .project-points li { margin: 5px 0; }
+    .project-stack { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 17px; }
+    .project-stack .tag { padding: 4px 8px; font-size: .73rem; }
+    .project-links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: auto; padding-top: 19px; }
+    .project-links a { font-size: .88rem; font-weight: 800; }
+    .empty-state { grid-column: 1 / -1; padding: 26px; border: 1px dashed var(--line); border-radius: 16px; color: var(--muted); text-align: center; }
+
+    .timeline { display: grid; gap: 14px; }
+    .timeline-item { display: grid; grid-template-columns: 165px 1fr; gap: 20px; padding: 24px 26px; }
+    .timeline-date { color: var(--brand); font-size: .85rem; font-weight: 850; }
+    .timeline-item h3 { margin: 0 0 5px; font-size: 1.06rem; }
+    .timeline-item p { margin: 0; color: var(--muted); font-size: .94rem; }
+    .education-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .education-card { padding: 26px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); }
+    .education-card h3 { margin: 0 0 8px; font-size: 1.08rem; }
+    .education-card p { margin: 0 0 12px; color: var(--ink-soft); font-size: .94rem; }
+    .education-card .education-meta { color: var(--muted); font-size: .84rem; font-weight: 750; }
+
+    .resume-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .resume-card { display: flex; flex-direction: column; padding: 22px; }
+    .resume-card h3 { margin: 9px 0 5px; font-size: 1.03rem; }
+    .resume-card p { flex: 1; margin: 0 0 17px; color: var(--muted); font-size: .88rem; }
+    .resume-card a { font-size: .9rem; font-weight: 800; }
+    .note {
+      margin-top: 18px; padding: 16px 18px; border-left: 3px solid var(--teal);
+      border-radius: 0 12px 12px 0; background: #eaf5f4; color: #275a5c; font-size: .9rem;
+    }
+    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 20px; }
+    .contact-card { padding: 28px; }
+    .contact-card h3 { margin: 0 0 8px; font-size: 1.1rem; }
+    .contact-card p { margin: 0; color: var(--muted); }
+    .contact-list { display: grid; gap: 11px; margin: 0; padding: 0; list-style: none; }
+    .contact-list a { display: inline-flex; align-items: center; gap: 10px; font-weight: 750; text-decoration: none; }
+    footer { padding: 28px 0 38px; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
+    .footer-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+    .muted-link { color: var(--muted); }
+
+    @media (max-width: 900px) {
+      .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .profile-panel { max-width: 580px; }
+      .resume-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .nav-links { display: none; position: absolute; top: 71px; left: 0; right: 0; padding: 18px 22px 22px;
+        background: white; border-bottom: 1px solid var(--line); box-shadow: var(--shadow); }
+      .nav-links.is-open { display: grid; gap: 15px; }
+      .menu-toggle { display: inline-flex; }
+    }
+    @media (max-width: 650px) {
+      .container { width: min(var(--content), calc(100% - 30px)); }
+      .hero { padding: 58px 0 50px; }
+      .section { padding: 55px 0; }
+      .projects-grid, .skills-grid, .education-grid, .resume-grid { grid-template-columns: 1fr; }
+      .timeline-item { grid-template-columns: 1fr; gap: 5px; }
+      .profile-panel, .prose-card, .focus-card, .skill-card, .project-card, .education-card, .contact-card { padding: 22px; }
+      .project-toolbar { align-items: stretch; }
+      .search-input { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .button:hover { transform: none; }
+    }
+    @media print {
+      .site-header, .actions, .project-toolbar, footer { display: none !important; }
+      body { background: white; color: black; }
+      .section { padding: 20px 0; break-inside: avoid; }
+      .project-card, .resume-card, .education-card { box-shadow: none; break-inside: avoid; }
+      a { color: black; }
+    }
+  </style>
 </head>
 <body>
-<canvas id="bg"></canvas>
-<div class="noise"></div>
-<nav class="nav"><div class="nav-inner"><div class="logo">IK.</div><div class="nav-links"><a href="#about">Обо мне</a><a href="#skills">Навыки</a><a href="#experience">Опыт</a><a href="#projects">Проекты</a>
-      <a href="#resumes">Резюме</a><a href="#contact">Контакты</a></div><div class="lang">RU</div></div></nav>
-
-<section class="hero">
-  <div class="reveal">
-    <div style="font-family:'JetBrains Mono',monospace;color:var(--accent3);font-size:.95rem;margin-bottom:18px;letter-spacing:.1em">❯ HELLO_WORLD</div>
-    <h1>Кузык<br><span class="grad">Иван Романович</span></h1>
-    <div class="role">Техник-программист · Разработчик · Специалист широкого профиля<br><span class="typing" id="typing"></span></div>
-    <div class="meta">
-      <span>📍 Москва, м. Бульвар Дмитрия Донского</span>
-      <span>🎓 Мосполитех · 5.0</span>
-      <span>💻 Full-stack · AI · Robotics · CAD</span>
-      <span>🐙 github.com/vanya890</span>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand-mark" href="#top" aria-label="Иван Кузык — наверх">
+        <span class="brand-icon">IK</span><span>Иван Кузык</span>
+      </a>
+      <nav class="nav-links" id="primary-navigation" aria-label="Основная навигация">
+        <a href="#about">Профиль</a>
+        <a href="#skills">Компетенции</a>
+        <a href="#projects">Проекты</a>
+        <a href="#experience">Опыт</a>
+        <a href="#education">Образование</a>
+        <a href="#resumes">Резюме PDF</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Меню</button>
     </div>
-    <div class="cta">
-      <a class="btn btn-primary" href="#resumes">↓ Смотреть резюме</a>
-      <a class="btn btn-ghost" href="https://github.com/vanya890">GitHub →</a>
-      <a class="btn btn-ghost" href="mailto:vanya.kuzyk1@gmail.com">Написать ✉</a>
-      <a class="btn btn-ghost" href="https://t.me/CODY890" target="_blank">Telegram ✈</a>
-      <a class="btn btn-ghost" href="https://github.com/vanya890" target="_blank">GitHub 🐙</a>
-    </div>
-  </div>
-</section>
+  </header>
 
-<div class="marquee"><div class="marquee-track">
-  <span>TypeScript <b>·</b> React <b>·</b> Python <b>·</b> Rust <b>·</b> ROS <b>·</b> OpenCV <b>·</b> Stable Diffusion <b>·</b> ComfyUI <b>·</b> Three.js <b>·</b> Laravel <b>·</b> Docker <b>·</b> CAD <b>·</b> 1С <b>·</b> VR/AR <b>·</b> LLM <b>·</b></span>
-  <span>TypeScript <b>·</b> React <b>·</b> Python <b>·</b> Rust <b>·</b> ROS <b>·</b> OpenCV <b>·</b> Stable Diffusion <b>·</b> ComfyUI <b>·</b> Three.js <b>·</b> Laravel <b>·</b> Docker <b>·</b> CAD <b>·</b> 1С <b>·</b> VR/AR <b>·</b> LLM <b>·</b></span>
-</div></div>
-
-<section id="about">
-  <h2 class="section-title reveal">Обо <span class="accent">мне</span></h2>
-  <p class="section-sub reveal">Разносторонний специалист с техническим образованием в области информационных систем и программирования.</p>
-  <div class="about">
-    <div class="reveal-left">
-      <p>Имею опыт работы с широким спектром технологий: от веб-разработки и программирования до робототехники, 3D-моделирования и AI-систем. Выполнял проекты в рамках учёбы, фриланса и личных экспериментов.</p>
-      <p>Быстро осваиваю новые инструменты, ориентирован на практический результат. Средний балл <b>5.0</b> в Мосполитех, диплом с отличием в колледже.</p>
-      <p>Люблю разбирать системы до основания и собирать их обратно — лучше, чем было.</p>
-    </div>
-    <div class="stats reveal">
-      <div class="stat"><div class="num" data-count="6">0</div><div class="lbl">Направлений резюме</div></div>
-      <div class="stat"><div class="num">5.0</div><div class="lbl">Средний балл в Мосполитех</div></div>
-      <div class="stat"><div class="num" data-count="30">0</div><div class="lbl">Технологий в арсенале</div></div>
-      <div class="stat"><div class="num">∞</div><div class="lbl">Любопытство</div></div>
-    </div>
-  </div>
-</section>
-
-<section id="skills">
-  <h2 class="section-title reveal">Ключевые <span class="accent">компетенции</span></h2>
-  <p class="section-sub reveal">Широкий стек: от веба и AI до CAD, робототехники и VR/AR.</p>
-  <div class="skills-grid">
-    <div class="skill-card reveal"><div class="ic">🌐</div><h3>Веб и ПО</h3><p>Fullstack-разработка, API, деплой.</p><ul><li>TypeScript, JavaScript, Python, PHP, C#, SQL, Rust</li><li>React, Vite, Tailwind, Node.js, Express, Laravel</li><li>REST, WebSocket, Docker, Nginx, Linux, Git</li></ul></div>
-    <div class="skill-card reveal"><div class="ic">🤖</div><h3>AI / ML</h3><p>LLM, генерация, компьютерное зрение.</p><ul><li>OpenAI, Claude, Yandex AI, Groq, Qwen Coder</li><li>Ollama, llama.cpp, Unsloth, LM Studio</li><li>Stable Diffusion, ComfyUI, LoRA, ControlNet</li><li>PyTorch, OpenCV, NumPy, Scikit-learn</li></ul></div>
-    <div class="skill-card reveal"><div class="ic">📐</div><h3>CAD и инженерия</h3><p>Чертежи, конструкторская документация.</p><ul><li>Компас-3D, AutoCAD</li><li>Моделирование микросхем и дорожек</li><li>Электроника, чертежи</li></ul></div>
-    <div class="skill-card reveal"><div class="ic">🦾</div><h3>Робототехника</h3><p>ROS, симуляции, датчики.</p><ul><li>ROS, Gazebo, RViz, Clover, TurtleBot3</li><li>Сервоприводы, лидары, дальномеры</li><li>LabVIEW, симуляторы промышленных ячеек</li></ul></div>
-    <div class="skill-card reveal"><div class="ic">🥽</div><h3>VR / AR</h3><p>Веб-AR, порталы, VR-очки.</p><ul><li>Three.js / AR.js, маркерная AR</li><li>AR-порталы, веб-AR</li><li>VR-очки, синхронное воспроизведение</li></ul></div>
-    <div class="skill-card reveal"><div class="ic">🏢</div><h3>1С и учёт</h3><p>Учётные системы, сети, серверы.</p><ul><li>1С:Библиотека, 1С:Торговая точка</li><li>МойСклад</li><li>Сетевая инфраструктура, серверное оборудование</li></ul></div>
-  </div>
-</section>
-
-<section id="experience">
-  <h2 class="section-title reveal">Образование и <span class="accent">опыт</span></h2>
-  <p class="section-sub reveal">Учёба, фриланс, личные эксперименты.</p>
-  <div class="timeline reveal">
-    <div class="tl-item"><h4>Мосполитех</h4><div class="when">2022 — 2026 · Информатика и вычислительная техника (киберфизические системы)</div><p>Средний балл 5.0. Проекты по робототехнике, AI, веб-разработке.</p></div>
-    <div class="tl-item"><h4>ГБПОУ «Образовательный комплекс «Юго-Запад»</h4><div class="when">2018 — 2022 · Информационные системы и программирование</div><p>Диплом с отличием. База по программированию, сетям, учётным системам.</p></div>
-    <div class="tl-item"><h4>Фриланс и личные проекты</h4><div class="when">ongoing</div><p>Telegram/Discord-боты, парсинг, AI-интеграции, 3D-моделирование, написание научных работ на заказ.</p></div>
-  </div>
-</section>
-
-<section id="projects">
-  <h2 class="section-title reveal">Проекты <span class="accent">на GitHub</span></h2>
-  <p class="section-sub reveal">Публичные репозитории — от самых значимых к учебным. Нажмите, чтобы открыть и изучить.</p>
-
-  <h3 class="reveal" style="font-size:1.4rem;margin:20px 0 16px;color:var(--accent3)">Профессиональные и инженерные</h3>
-  <div class="resumes">
-    <div class="resume-card reveal"><span class="tag">RoboSim</span><h3>RoboSim</h3><p>Симулятор робототехники на ROS/Gazebo/3D. Сценарии, датчики (лидары, дальномеры), визуализация в RViz. Управление роботами-манипуляторами, промышленные ячейки.</p><a href="https://github.com/vanya890/RoboSim">Открыть репозиторий </a></div>
-    <div class="resume-card reveal"><span class="tag">VRSyncSite</span><h3>VRSyncSite</h3><p>Веб-портал для VR-синхронизации: синхронное воспроизведение контента на VR-очках, маркерная AR, AR-порталы. Three.js, WebXR, реальное время.</p><a href="https://github.com/vanya890/VRSyncSite">Открыть репозиторий </a></div>
-    <div class="resume-card reveal"><span class="tag">SimWeb</span><h3>SimWeb</h3><p>EduRoboSim — образовательный 3D-симулятор робототехники. Десктоп на Tauri (Rust + WebView2), фронтенд React + Three.js. DSL для программирования роботов, визуализация траекторий, сенсоры.</p><a href="https://github.com/vanya890/SimWeb">Открыть репозиторий </a></div>
-    <div class="resume-card reveal"><span class="tag">laravelShop</span><h3>laravelShop</h3><p>Интернет-магазин (e-commerce) на Laravel (PHP). Каталог товаров, корзина, заказы, авторизация, MySQL/SQLite, Blade-шаблоны, Bootstrap, Laravel Mix.</p><a href="https://github.com/vanya890/laravelShop">Открыть репозиторий </a></div>
-    <div class="resume-card reveal"><span class="tag">TurtleBot3-Lab</span><h3>TurtleBot3-Lab</h3><p>Лабораторные работы с TurtleBot3: настройка ROS, навигация, SLAM, управление движением, сенсоры (лидар, камера).</p><a href="https://github.com/vanya890/TurtleBot3-Lab">Открыть репозиторий </a></div>
-    <div class="resume-card reveal"><span class="tag">CodyModTranslator</span><h3>CodyModTranslator</h3><p>CLI-инструмент для перевода файлов модов (ESP/ESM) Skyrim/Fallout. Несколько бэкендов перевода (LLM API, локальные модели). Пакетная обработка, экспорт SST/XML для xTranslator.</p><a href="https://github.com/vanya890/CodyModTranslator">Открыть репозиторий </a></div>
-    <div class="resume-card reveal"><span class="tag">ST24-ProductHelper</span><h3>ST24-ProductHelper</h3><p>Приложение для быстрого создания карточек товаров для магазина. Генерация описаний, фото, цен. Интеграция с каталогом.</p><a href="https://github.com/vanya890/ST24-ProductHelper">Открыть репозиторий </a></div>
-    <div class="resume-card reveal"><span class="tag">ST24-Check</span><h3>ST24-Check</h3><p>Инструмент проверки и валидации данных товаров/заказов ST24. Автоматизация QA, проверка полей, отчёты.</p><a href="https://github.com/vanya890/ST24-Check">Открыть репозиторий </a></div>
-    <div class="resume-card reveal"><span class="tag">deepseek-web-search</span><h3>deepseek-web-search</h3><p>Codex-скилл: исследование через веб-чат DeepSeek (chat.deepseek.com). Автоматизация браузера, извлечение ответов с источниками. Без API-ключей.</p><a href="https://github.com/vanya890/deepseek-web-search">Открыть репозиторий </a></div>
-    <div class="resume-card reveal"><span class="tag">stroy-materiali-24-skill</span><h3>stroy-materiali-24-skill</h3><p>Agent Skill для магазина стройматериалов Stroy-Materiali-24.ru: каталог 1554 товара в 98 категориях, поиск, комплекты, сметы, доставка, цены. Интеграция с AI-агентами.</p><a href="https://github.com/vanya890/stroy-materiali-24-skill">Открыть репозиторий </a></div>
-    <div class="resume-card reveal"><span class="tag">study-projects</span><h3>study-projects</h3><p>Учебные проекты Мосполитеха (2021-2025): 1С (конфигурации, WEB, IT), Unity (игры, VR), AVR (микроконтроллеры), ROS (робототехника), Java, MATLAB, веб-разработка, базы данных.</p><a href="https://github.com/vanya890/study-projects">Открыть репозиторий </a></div>
-    <div class="resume-card reveal"><span class="tag">AI_Study_Colab</span><h3>AI_Study_Colab</h3><p>Учебные Jupyter-ноутбуки по AI/ML: перцептроны, CNN, NumPy, Matplotlib, обработка данных, задачи классификации. Google Colab совместимые.</p><a href="https://github.com/vanya890/AI_Study_Colab">Открыть репозиторий </a></div>
-  </div>
-
-  <h3 class="reveal" style="font-size:1.4rem;margin:40px 0 16px;color:var(--accent2)">Игровые, личные и развлекательные</h3>
-  <div class="resumes">
-    <div class="resume-card reveal"><span class="tag">minecraft-comes-alive</span><h3>minecraft-comes-alive</h3><p>Minecraft Comes Alive Reborn — мод, заменяющий жителей на человекоподобных NPC. Общение, отношения, брак, дети, хозяйство (фермерство, рыбалка, рубка, охота, майнинг). Генетика, управление деревней. Minecraft 1.16.5+.</p><a href="https://github.com/vanya890/minecraft-comes-alive">Открыть репозиторий </a></div>
-    <div class="resume-card reveal"><span class="tag">kazari-jump</span><h3>kazari-jump</h3><p>Kazari Jump — one-tap runner для Telegram. Canvas + Vite + TypeScript. Игрок прыгает, уклоняется от препятствий. Демо на GitHub Pages, интеграция с Telegram Mini App.</p><a href="https://github.com/vanya890/kazari-jump">Открыть репозиторий</a> <a href="https://vanya890.github.io/kazari-jump/" style="color:#22d3ee;font-weight:700">🎮 Играть</a></div>
-    <div class="resume-card reveal"><span class="tag">kazari-pulse</span><h3>kazari-pulse</h3><p>Pulse Drift — аркадная игра-раннер для Telegram Mini App. Управление импульсами, уровни сложности, скины, музыка, рекорды. Canvas-рендеринг, Vite.</p><a href="https://github.com/vanya890/kazari-pulse">Открыть репозиторий</a> <a href="https://vanya890.github.io/kazari-pulse/" style="color:#22d3ee;font-weight:700">🎮 Играть</a></div>
-    <div class="resume-card reveal"><span class="tag">AIChatGame</span><h3>AIChatGame</h3><p>AI Chat Game — веб-приложение для общения с AI-персонажами. Создание персонажей, диалоги, сохранение истории. React + AI API интеграция.</p><a href="https://github.com/vanya890/AIChatGame">Открыть репозиторий </a></div>
-    <div class="resume-card reveal"><span class="tag">CAWP / CQT</span><h3>CAWP</h3><p>CodyAiWorldPlayer + CQT: SKSE-плагин для Skyrim SE/AE с ImGui-трекером квестов. Просмотр активных квестов, этапов, целей. Безопасное изменение этапов через Papyrus VM. CommonLibSSE-NG.</p><a href="https://github.com/vanya890/CAWP">Открыть репозиторий </a></div>
-    <div class="resume-card reveal"><span class="tag">DeNoiseDroid</span><h3>DeNoiseDroid</h3><p>DeNoiseDroid — приложение для Android: шумоподавление аудио в реальном времени. Фильтрация шума, улучшение качества записи.</p><a href="https://github.com/vanya890/DeNoiseDroid">Открыть репозиторий </a></div>
-  </div>
-</section>
-
-<section id="resumes">
-  <h2 class="section-title reveal">Резюме <span class="accent">(PDF)</span></h2>
-  <p class="section-sub reveal">Выберите направление — каждое резюме заточено под конкретную вакансию.</p>
-  <div class="resumes">
-    <div class="resume-card reveal"><span class="tag">Универсальное</span><h3>Resume_Universal.pdf</h3><p>Все навыки сразу — для широких позиций.</p><a href="Resumes/Universal/Resume_Universal.pdf" onclick="window.location.href=this.href;return false;">Открыть PDF →</a></div>
-    <div class="resume-card reveal"><span class="tag">AI / ML</span><h3>Resume_AI_ML.pdf</h3><p>ИИ, нейросети, промпт-инжиниринг, локальные LLM.</p><a href="Resumes/AI_ML/Resume_AI_ML.pdf" onclick="window.location.href=this.href;return false;">Открыть PDF →</a></div>
-    <div class="resume-card reveal"><span class="tag">Инженерное</span><h3>Resume_Engineer.pdf</h3><p>CAD, робототехника, VR/AR, 1С, сети.</p><a href="Resumes/Engineer/Resume_Engineer.pdf" onclick="window.location.href=this.href;return false;">Открыть PDF →</a></div>
-    <div class="resume-card reveal"><span class="tag">Data</span><h3>Resume_Data.pdf</h3><p>Data Science, статистика, ML.</p><a href="Resumes/Data/Resume_Data.pdf" onclick="window.location.href=this.href;return false;">Открыть PDF →</a></div>
-    <div class="resume-card reveal"><span class="tag">Робототехника</span><h3>Resume_Robotics.pdf</h3><p>ROS, киберфизические системы, компьютерное зрение.</p><a href="Resumes/Robotics/Resume_Robotics.pdf" onclick="window.location.href=this.href;return false;">Открыть PDF →</a></div>
-    <div class="resume-card reveal"><span class="tag">Веб</span><h3>Resume_Web.pdf</h3><p>Fullstack: React, TypeScript, Laravel.</p><a href="Resumes/Web/Resume_Web.pdf" onclick="window.location.href=this.href;return false;">Открыть PDF →</a></div>
-  </div>
-</section>
-
-<section id="contact">
-  <h2 class="section-title reveal">Контакты</h2>
-  <div class="contact">
-    <div class="reveal-left">
-      <p>Открыт к предложениям, проектам и сотрудничеству. Пишите — отвечу быстро.</p>
-      <div class="contact-links">
-        <a class="contact-link" href="mailto:vanya.kuzyk1@gmail.com"><span class="ic">📧</span><div class="txt"><div class="t">Email</div><div class="s">vanya.kuzyk1@gmail.com</div></div></a>
-        <a class="contact-link" href="https://t.me/CODY890"><span class="ic">✈️</span><div class="txt"><div class="t">Telegram</div><div class="s">@CODY890</div></div></a>
-        <a class="contact-link" href="https://github.com/vanya890"><span class="ic">🐙</span><div class="txt"><div class="t">GitHub</div><div class="s">github.com/vanya890</div></div></a>
+  <main id="main">
+    <div class="container hero" id="top">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">Портфолио и резюме</p>
+          <h1>Кузык Иван<br><span>Романович</span></h1>
+          <p class="hero-lead">Разработчик программного обеспечения на стыке веб-технологий, AI и киберфизических систем.</p>
+          <p class="hero-note">Проектирую приложения, интеграции и технические решения. Основной фокус — TypeScript, Python, React, AI-инструменты, робототехника и 3D-симуляция.</p>
+          <div class="actions">
+            <a class="button button-primary" href="#resumes">Скачать резюме</a>
+            <a class="button button-secondary" href="#projects">Посмотреть проекты</a>
+            <a class="button button-secondary" href="mailto:vanya.kuzyk1@gmail.com">Написать письмо</a>
+          </div>
+        </div>
+        <aside class="profile-panel" aria-label="Краткая информация">
+          <h2>Кратко</h2>
+          <ul class="profile-list">
+            <li><span class="profile-icon">⌖</span><span><strong>Локация</strong>Москва, Россия</span></li>
+            <li><span class="profile-icon">⌘</span><span><strong>Основная специализация</strong>Разработка ПО и интеграция AI</span></li>
+            <li><span class="profile-icon">⚙</span><span><strong>Инженерный профиль</strong>Робототехника и киберфизические системы</span></li>
+            <li><span class="profile-icon">↗</span><span><strong>Открытые проекты</strong><a href="https://github.com/vanya890" target="_blank" rel="noopener noreferrer">github.com/vanya890</a></span></li>
+          </ul>
+        </aside>
       </div>
     </div>
-    <div class="reveal" style="text-align:center"><div class="bigemoji">🚀</div></div>
-  </div>
-</section>
 
-<footer>© 2026 Кузык Иван Романович · Сделано с <span style="color:#ff6b9d">❤</span> и кодом · <a href="https://github.com/vanya890/Resume">Исходники</a></footer>
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Профиль</p>
+          <h2 class="section-title">Инженерный подход к разработке ПО</h2>
+          <p class="section-description">Сочетаю прикладную разработку, экспериментирование с AI и опыт работы с программно-аппаратными системами.</p>
+        </div>
+        <div class="about-grid">
+          <div class="prose-card">
+            <p>Разрабатываю веб-приложения, desktop-инструменты, AI-интеграции и инженерные проекты. В работе уделяю внимание архитектуре, обработке данных, интеграции компонентов и воспроизводимости результата.</p>
+            <p>Практический опыт сформирован преимущественно в личных, учебных и дипломных проектах. В резюме эти форматы отделены от производственной практики и не представлены как многолетний штатный коммерческий стаж.</p>
+            <p>Наиболее показательный инженерный проект — образовательный 3D-симулятор робототехники с собственным языком программирования, виртуальной машиной, физикой столкновений и системой сенсоров.</p>
+          </div>
+          <aside class="focus-card">
+            <h3>Ключевые направления</h3>
+            <p>Разработка прикладных систем, интеграция моделей и сервисов, автоматизация рабочих процессов, 3D-визуализация и робототехническое моделирование.</p>
+            <div class="focus-tags">
+              <span class="tag">Software</span><span class="tag">AI / LLM</span><span class="tag">Robotics</span>
+              <span class="tag">Computer Vision</span><span class="tag">3D</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
 
-<script>
-const canvas=document.getElementById('bg');const ctx=canvas.getContext('2d');let w,h,particles=[],mouse={x:0,y:0};
-function resize(){w=canvas.width=window.innerWidth;h=canvas.height=window.innerHeight}resize();window.addEventListener('resize',resize);
-for(let i=0;i<110;i++)particles.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.8+0.5,hue:Math.random()*80+200});
-window.addEventListener('mousemove',e=>{mouse.x=e.clientX;mouse.y=e.clientY});
-function loop(){ctx.clearRect(0,0,w,h);for(const p of particles){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;const dx=p.x-mouse.x,dy=p.y-mouse.y,d=Math.hypot(dx,dy);if(d<120){p.x+=dx/d*0.6;p.y+=dy/d*0.6}ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`hsla(${p.hue},85%,68%,.75)`;ctx.fill()}for(let i=0;i<particles.length;i++){for(let j=i+1;j<particles.length;j++){const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y,d=Math.hypot(dx,dy);if(d<140){ctx.strokeStyle=`rgba(99,140,255,${(1-d/140)*.22})`;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.stroke()}}}requestAnimationFrame(loop)}loop();
-const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.reveal,.reveal-left').forEach(el=>io.observe(el));
-// typing effect
-const phrases=['Full-stack разработчик','AI/ML энтузиаст','Робототехник','CAD-инженер','VR/AR создатель'];let pi=0,ci=0,del=false;const t=document.getElementById('typing');
-function type(){const cur=phrases[pi];if(!del){t.textContent=cur.slice(0,ci+1);ci++;if(ci===cur.length){del=true;setTimeout(type,1600);return}}else{t.textContent=cur.slice(0,ci-1);ci--;if(ci===0){del=false;pi=(pi+1)%phrases.length}}setTimeout(type,del?45:90)}type();
-// counters
-document.querySelectorAll('[data-count]').forEach(el=>{const target=+el.dataset.count;let v=0;const step=()=>{v=Math.min(target,v+Math.ceil(target/40));el.textContent=v;if(v<target)requestAnimationFrame(step)};const o=new IntersectionObserver(e=>{if(e[0].isIntersecting){step();o.disconnect()}},{threshold:.5});o.observe(el)});
-// parallax
-document.addEventListener('mousemove',e=>{const x=(e.clientX/window.innerWidth-.5)*16;const y=(e.clientY/window.innerHeight-.5)*16;const h=document.querySelector('.hero h1');if(h)h.style.transform=`translate(${x*.4}px,${y*.4}px)`});
-</script>
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Компетенции</p>
+          <h2 class="section-title">Технологии и инструменты</h2>
+          <p class="section-description">Ниже разделены основные технологии, применявшиеся в проектах, и инструменты, с которыми есть базовая или учебная практика.</p>
+        </div>
+        <div class="skills-grid">
+          <article class="skill-card">
+            <h3>Разработка ПО и веб</h3>
+            <p>Клиентские приложения, интерфейсы, API, desktop-разработка и интеграция сервисов.</p>
+            <div class="skill-tags"><span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">C#</span><span class="tag">PHP</span><span class="tag">React</span><span class="tag">Vite</span><span class="tag">Node.js</span><span class="tag">Laravel</span><span class="tag">REST API</span><span class="tag">WebSocket</span></div>
+          </article>
+          <article class="skill-card">
+            <h3>AI / ML и обработка данных</h3>
+            <p>Интеграция облачных и локальных моделей, генеративные пайплайны и учебные ML-задачи.</p>
+            <div class="skill-tags"><span class="tag">OpenAI API</span><span class="tag">Ollama</span><span class="tag">LM Studio</span><span class="tag">llama.cpp</span><span class="tag">ComfyUI</span><span class="tag">Stable Diffusion</span><span class="tag">LoRA</span><span class="tag">OpenCV</span><span class="tag">NumPy</span><span class="tag">scikit-learn</span><span class="tag">PyTorch · базовый</span></div>
+          </article>
+          <article class="skill-card">
+            <h3>Робототехника и 3D</h3>
+            <p>Симуляция, работа с сенсорами, компьютерное зрение и программирование робототехнических платформ.</p>
+            <div class="skill-tags"><span class="tag">ROS</span><span class="tag">Gazebo</span><span class="tag">RViz</span><span class="tag">TurtleBot3</span><span class="tag">Clover</span><span class="tag">Three.js</span><span class="tag">React Three Fiber</span><span class="tag">Unity</span><span class="tag">LabVIEW</span></div>
+          </article>
+          <article class="skill-card">
+            <h3>Инфраструктура и инженерные инструменты</h3>
+            <p>Сборка и сопровождение приложений, базы данных, CAD и техническое администрирование.</p>
+            <div class="skill-tags"><span class="tag">Git</span><span class="tag">Docker</span><span class="tag">Linux</span><span class="tag">Nginx</span><span class="tag">MySQL</span><span class="tag">SQLite</span><span class="tag">SQL</span><span class="tag">Компас-3D</span><span class="tag">AutoCAD</span><span class="tag">1С</span></div>
+          </article>
+        </div>
+        <div class="note">Уровень владения отдельными технологиями различается. Базовые и учебные навыки не приравниваются к коммерческой экспертизе; подробности применения приведены в проектах и специализированных PDF.</div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Практика</p>
+          <h2 class="section-title">Избранные проекты</h2>
+          <p class="section-description">Публичные репозитории с проверяемыми описаниями и ссылками. Витрина загружается из единого реестра проектов в <code>data/projects.json</code>.</p>
+        </div>
+        <div class="project-toolbar">
+          <div class="filter-list" id="project-filters" aria-label="Фильтр проектов"></div>
+          <label>
+            <span class="skip-link">Поиск по проектам</span>
+            <input class="search-input" id="project-search" type="search" placeholder="Поиск по проектам и технологиям" aria-label="Поиск по проектам и технологиям">
+          </label>
+        </div>
+        <div class="projects-grid" id="projects-grid" aria-live="polite">
+          <div class="empty-state">Загружаю список проектов…</div>
+        </div>
+        <noscript><p class="note">Для фильтрации и загрузки списка проектов включите JavaScript. Все резюме PDF доступны ниже.</p></noscript>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Опыт</p>
+          <h2 class="section-title">Проектная деятельность и практика</h2>
+          <p class="section-description">Учебные и личные проекты перечислены отдельно от практики в организациях.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-date">2024 — настоящее время</div>
+            <div><h3>Проектная разработка</h3><p>Разработка веб- и desktop-приложений, AI-интеграций, инструментов автоматизации и технических прототипов. Наиболее значимые примеры доступны в разделе проектов.</p></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">Апрель — июнь 2022</div>
+            <div><h3>Техник-программист · ГБПОУ «Образовательный комплекс „Юго-Запад“»</h3><p>Диагностика и подготовка ПК, установка и обновление операционных систем и программ, подключение принтеров и периферии, настройка сетевых подключений, техническая помощь при проведении ЕГЭ.</p></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">Май — июль 2021</div>
+            <div><h3>Оператор базы данных · Издательство «Просвещение»</h3><p>Внесение данных в базу, описание изображений ключевыми словами и подготовка материалов для редакций.</p></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">Ноябрь 2020 — январь 2021</div>
+            <div><h3>Оператор ПК · ГБПОУ «Образовательный комплекс „Юго-Запад“»</h3><p>Ввод и редактирование данных в 1С:Библиотека, помощь сотрудникам в освоении основных операций системы.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Образование</p>
+          <h2 class="section-title">Техническая подготовка</h2>
+          <p class="section-description">Оставлены сведения, полезные работодателю. Оригиналы личных документов на сайте не публикуются.</p>
+        </div>
+        <div class="education-grid">
+          <article class="education-card">
+            <p class="education-meta">2022 — 2026 · Бакалавриат</p>
+            <h3>Московский политехнический университет</h3>
+            <p>Направление 09.03.01 «Информатика и вычислительная техника», специализация «Киберфизические системы», факультет информационных технологий.</p>
+            <p><strong>Средний балл:</strong> 5.0. <strong>ВКР:</strong> «Разработка образовательного 3D-симулятора робототехники», оценка «отлично».</p>
+          </article>
+          <article class="education-card">
+            <p class="education-meta">2018 — 2022 · Среднее профессиональное образование</p>
+            <h3>ГБПОУ «Образовательный комплекс „Юго-Запад“»</h3>
+            <p>Специальность 09.02.07 «Информационные системы и программирование».</p>
+            <p><strong>Квалификация:</strong> специалист по информационным системам. Диплом с отличием.</p>
+          </article>
+        </div>
+        <div class="note">Оригиналы дипломов и выписки из личного кабинета не размещаются в открытом репозитории. При необходимости подтверждающие документы предоставляются адресно работодателю.</div>
+      </div>
+    </section>
+
+    <section class="section" id="resumes">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">PDF</p>
+          <h2 class="section-title">Резюме по направлениям</h2>
+          <p class="section-description">PDF собираются из LaTeX-исходников в GitHub Actions при каждом обновлении основной ветки.</p>
+        </div>
+        <div class="resume-grid">
+          <article class="resume-card"><span class="tag">Универсальное</span><h3>Resume Universal</h3><p>Сводный технический профиль и наиболее значимые проекты.</p><a href="Resumes/Universal/Resume_Universal.pdf">Открыть PDF →</a></article>
+          <article class="resume-card"><span class="tag">AI / ML</span><h3>Resume AI / ML</h3><p>AI-интеграции, локальные модели, генеративные инструменты и учебные ML-проекты.</p><a href="Resumes/AI_ML/Resume_AI_ML.pdf">Открыть PDF →</a></article>
+          <article class="resume-card"><span class="tag">Инженерия</span><h3>Resume Engineer</h3><p>CAD, инженерные системы, робототехника, администрирование.</p><a href="Resumes/Engineer/Resume_Engineer.pdf">Открыть PDF →</a></article>
+          <article class="resume-card"><span class="tag">Робототехника</span><h3>Resume Robotics</h3><p>ROS, техническое зрение, сенсоры, управление и 3D-симуляция.</p><a href="Resumes/Robotics/Resume_Robotics.pdf">Открыть PDF →</a></article>
+          <article class="resume-card"><span class="tag">Веб</span><h3>Resume Web</h3><p>Fullstack-разработка, TypeScript, React, API и базы данных.</p><a href="Resumes/Web/Resume_Web.pdf">Открыть PDF →</a></article>
+          <article class="resume-card"><span class="tag">Данные</span><h3>Resume Data</h3><p>Python, статистический анализ, визуализация и учебные ML-задачи.</p><a href="Resumes/Data/Resume_Data.pdf">Открыть PDF →</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Связь</p>
+          <h2 class="section-title">Контакты</h2>
+          <p class="section-description">Для предложений о работе, технических задач и сотрудничества.</p>
+        </div>
+        <div class="contact-grid">
+          <article class="contact-card">
+            <h3>Написать напрямую</h3>
+            <ul class="contact-list">
+              <li><a href="mailto:vanya.kuzyk1@gmail.com">✉️ vanya.kuzyk1@gmail.com</a></li>
+              <li><a href="tel:+79165745299">☎️ +7 (916) 574-52-99</a></li>
+              <li><a href="https://t.me/CODY890" target="_blank" rel="noopener noreferrer">↗ Telegram · @CODY890</a></li>
+            </ul>
+          </article>
+          <article class="contact-card">
+            <h3>Публичные материалы</h3>
+            <p>Исходный код сайта, LaTeX-резюме, реестр проектов и процесс автоматической сборки доступны в GitHub.</p>
+            <div class="actions">
+              <a class="button button-secondary" href="https://github.com/vanya890">GitHub-профиль</a>
+              <a class="button button-secondary" href="https://github.com/vanya890/Resume">Репозиторий резюме</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>© <span id="current-year">2026</span> Кузык Иван Романович</span>
+      <span><a class="muted-link" href="https://github.com/vanya890/Resume">Исходный код сайта</a></span>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('#menu-toggle');
+    const navigation = document.querySelector('#primary-navigation');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', String(!isOpen));
+      navigation.classList.toggle('is-open', !isOpen);
+      menuToggle.textContent = isOpen ? 'Меню' : 'Закрыть';
+    });
+
+    navigation.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navigation.classList.remove('is-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.textContent = 'Меню';
+      });
+    });
+
+    document.querySelector('#current-year').textContent = new Date().getFullYear();
+
+    const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, char => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    })[char]);
+
+    const projectsGrid = document.querySelector('#projects-grid');
+    const projectFilters = document.querySelector('#project-filters');
+    const projectSearch = document.querySelector('#project-search');
+    let projects = [];
+    let selectedCategory = 'Все';
+
+    function renderProjectFilters() {
+      const categories = ['Все', ...new Set(projects.map(project => project.category))];
+      projectFilters.innerHTML = categories.map(category =>
+        `<button class="filter-button" type="button" data-category="${escapeHtml(category)}" aria-pressed="${category === selectedCategory}">${escapeHtml(category)}</button>`
+      ).join('');
+      projectFilters.querySelectorAll('button').forEach(button => {
+        button.addEventListener('click', () => {
+          selectedCategory = button.dataset.category;
+          renderProjectFilters();
+          renderProjects();
+        });
+      });
+    }
+
+    function renderProjects() {
+      const query = projectSearch.value.trim().toLocaleLowerCase('ru');
+      const visible = projects.filter(project => {
+        const matchesCategory = selectedCategory === 'Все' || project.category === selectedCategory;
+        const searchable = [project.title, project.description, project.category, ...(project.stack || [])].join(' ').toLocaleLowerCase('ru');
+        return matchesCategory && searchable.includes(query);
+      });
+
+      if (!visible.length) {
+        projectsGrid.innerHTML = '<div class="empty-state">По заданным условиям проекты не найдены.</div>';
+        return;
+      }
+
+      projectsGrid.innerHTML = visible.map(project => {
+        const highlights = (project.highlights || []).map(item => `<li>${escapeHtml(item)}</li>`).join('');
+        const stack = (project.stack || []).map(item => `<span class="tag">${escapeHtml(item)}</span>`).join('');
+        const links = (project.links || []).map(link =>
+          `<a href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(link.label)} ↗</a>`
+        ).join('');
+        return `
+          <article class="project-card">
+            <div class="project-meta"><span>${escapeHtml(project.category)}</span><span>·</span><span>${escapeHtml(project.period || 'Проект')}</span></div>
+            <h3>${escapeHtml(project.title)}</h3>
+            <p>${escapeHtml(project.description)}</p>
+            ${highlights ? `<ul class="project-points">${highlights}</ul>` : ''}
+            <div class="project-stack">${stack}</div>
+            <div class="project-links">${links}</div>
+          </article>`;
+      }).join('');
+    }
+
+    async function loadProjects() {
+      try {
+        const response = await fetch('data/projects.json', { cache: 'no-cache' });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        if (!Array.isArray(data.projects)) throw new Error('Некорректная структура реестра проектов');
+        projects = data.projects;
+        renderProjectFilters();
+        renderProjects();
+      } catch (error) {
+        projectsGrid.innerHTML = '<div class="empty-state">Не удалось загрузить реестр проектов. Список PDF-резюме и контакты доступны ниже.</div>';
+        console.error('Не удалось загрузить data/projects.json:', error);
+      }
+    }
+
+    projectSearch.addEventListener('input', renderProjects);
+    loadProjects();
+  </script>
 </body>
 </html>

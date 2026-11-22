@@ -1,148 +1,83 @@
-# Резюме — Кузык Иван Романович
+# Резюме и портфолио — Кузык Иван Романович
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-638cff?style=for-the-badge&logo=github)](https://vanya890.github.io/Resume/)
-[![Resume PDF](https://img.shields.io/badge/Resume-PDF-a855f7?style=for-the-badge&logo=adobeacrobatreader)](Resumes/Universal/Resume_Universal.pdf)
-[![Projects](https://img.shields.io/badge/Projects-GitHub-22d3ee?style=for-the-badge&logo=github)](https://vanya890.github.io/Resume/#projects)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-live-3157d5?style=for-the-badge&logo=github)](https://vanya890.github.io/Resume/)
+[![Build and deploy](https://github.com/vanya890/Resume/actions/workflows/pages.yml/badge.svg)](https://github.com/vanya890/Resume/actions/workflows/pages.yml)
 
-**Техник-программист / Разработчик / Специалист широкого профиля**
+**Разработчик программного обеспечения · AI-интеграции · киберфизические системы**
 
-📍 Москва, м. Бульвар Дмитрия Донского  
-📧 vanya.kuzyk1@gmail.com  
-🔗 [github.com/vanya890](https://github.com/vanya890)
+Москва · [vanya.kuzyk1@gmail.com](mailto:vanya.kuzyk1@gmail.com) · [Telegram @CODY890](https://t.me/CODY890) · [GitHub](https://github.com/vanya890)
 
----
+## Онлайн-портфолио
 
-## Обо мне
+**[Открыть сайт резюме](https://vanya890.github.io/Resume/)**
 
-Разносторонний специалист с техническим образованием в области информационных систем и программирования. Имею опыт работы с широким спектром технологий: от веб-разработки и программирования до робототехники, 3D-моделирования и AI-систем. Выполнял проекты в рамках учёбы, фриланса и личных экспериментов. Быстро осваиваю новые инструменты, ориентирован на практический результат.
+Сайт содержит краткий профиль, компетенции, избранные публичные проекты, образование и шесть вариантов резюме PDF.
 
-**Образование:**
-- Мосполитех — Информатика и вычислительная техника (киберфизические системы), 2022–2026, средний балл 5.0
-- ГБПОУ «Образовательный комплекс «Юго-Запад» — Информационные системы и программирование, 2018–2022, диплом с отличием
+## Варианты PDF-резюме
 
----
+PDF собираются из исходников XeLaTeX автоматически при запуске GitHub Actions. Актуальные опубликованные файлы доступны на GitHub Pages:
 
-## Ключевые компетенции
-
-### Разработка ПО и веб-технологии
-TypeScript, JavaScript, Python, PHP, C#, SQL, Rust (базовый)  
-React, Vite, Tailwind CSS, Node.js, Express.js, Laravel  
-Three.js / React Three Fiber, REST API, WebSocket  
-Git, Docker, Docker Compose, Nginx, Linux
-
-### AI и машинное обучение
-OpenAI API, Claude, Yandex AI, Google AI Studio, Groq, Qwen Coder  
-Локальные LLM: Unsloth, LM Studio, Ollama, llama.cpp  
-Stable Diffusion, ComfyUI, LoRA, ControlNet  
-Нейросети: перцептроны, CNN, OpenCV, NumPy, Scikit-learn, PyTorch (базовый)  
-Промпт-инжиниринг, JSON schema
-
-### Инженерные и CAD-системы
-Компас-3D, AutoCAD, чертежи, конструкторская документация  
-Моделирование микросхем и дорожек
-
-### Робототехника и техническое зрение
-ROS (Robot Operating System), Gazebo, RViz, Clover, TurtleBot3  
-OpenCV (OpenCvSharp), обработка изображений, детекция объектов  
-Сервоприводы, лидары, дальномеры, датчики линии  
-LabVIEW, симуляторы промышленных ячеек
-
-### VR/AR
-Веб-AR (Three.js/AR.js), маркерная AR, AR-порталы  
-VR-очки, системы синхронного воспроизведения
-
-### 1С, учётные системы и администрирование
-1С:Библиотека, 1С:Торговая точка, МойСклад  
-Сетевая инфраструктура, коммутация, серверное оборудование
-
-### Медиа и контент
-DaVinci Resolve (базовый монтаж), AI-обработка фото  
-Социальные сети, медиа-менеджмент  
-Написание курсовых, диссертаций и исследовательских работ на заказ  
-LaTeX (TEX-документы)
-
-### Прочее
-Telegram-боты (aiogram), Discord-боты (discord.py)  
-Парсинг сайтов (BeautifulSoup/Scrapy), RSS-фиды  
-Автотесты (Vitest/Jest)  
-Оптимизация систем, поиск узких мест  
-SEO, Яндекс.Вебмастер, Яндекс API
-
----
-
-## Резюме (PDF)
-
-| Направление | Файл | Описание |
-|-------------|------|----------|
-| **Универсальное** | [Resume_Universal.pdf](Resumes/Universal/Resume_Universal.pdf) | Все навыки сразу |
-| AI/ML | [Resume_AI_ML.pdf](Resumes/AI_ML/Resume_AI_ML.pdf) | Искусственный интеллект, нейросети, промпт-инжиниринг |
-| Инженерно-техническое | [Resume_Engineer.pdf](Resumes/Engineer/Resume_Engineer.pdf) | CAD, робототехника, VR/AR, 1С, сети |
-| Аналитик данных | [Resume_Data.pdf](Resumes/Data/Resume_Data.pdf) | Data Science, статистический анализ, ML |
-| Робототехника | [Resume_Robotics.pdf](Resumes/Robotics/Resume_Robotics.pdf) | ROS, киберфизические системы, компьютерное зрение |
-| Веб-разработчик | [Resume_Web.pdf](Resumes/Web/Resume_Web.pdf) | Fullstack, React, TypeScript, Laravel |
-
----
+| Направление | PDF |
+|---|---|
+| Универсальное | [Resume_Universal.pdf](https://vanya890.github.io/Resume/Resumes/Universal/Resume_Universal.pdf) |
+| AI / ML | [Resume_AI_ML.pdf](https://vanya890.github.io/Resume/Resumes/AI_ML/Resume_AI_ML.pdf) |
+| Инженерное | [Resume_Engineer.pdf](https://vanya890.github.io/Resume/Resumes/Engineer/Resume_Engineer.pdf) |
+| Робототехника | [Resume_Robotics.pdf](https://vanya890.github.io/Resume/Resumes/Robotics/Resume_Robotics.pdf) |
+| Веб-разработка | [Resume_Web.pdf](https://vanya890.github.io/Resume/Resumes/Web/Resume_Web.pdf) |
+| Аналитика данных | [Resume_Data.pdf](https://vanya890.github.io/Resume/Resumes/Data/Resume_Data.pdf) |
 
 ## Структура проекта
 
-```
-Resume/
-├── MasterData/
-│   └── Все_навыки.md              # База знаний (все навыки с контекстом)
+```text
+.
+├── .github/workflows/pages.yml  # CI, сборка PDF и деплой GitHub Pages
+├── data/projects.json           # единый реестр проектов для сайта
+├── index.html                   # адаптивный сайт-портфолио
+├── MasterData/                  # рабочая база навыков
 ├── Resumes/
-│   ├── Common/
-│   │   └── Resume_Common.tex      # Общие данные (подключается во все резюме)
-│   ├── Universal/                 # Универсальное резюме
-│   ├── AI_ML/                     # AI/ML направление
-│   ├── Engineer/                  # Инженерно-техническое направление
-│   ├── Data/                      # Аналитик данных
-│   ├── Robotics/                  # Робототехника
-│   └── Web/                       # Веб-разработчик
-├── Вводные данные/                # Исходные материалы
-└── README.md                      # Этот файл
+│   ├── Common/                  # общие персональные данные и образование
+│   ├── AI_ML/
+│   ├── Data/
+│   ├── Engineer/
+│   ├── Robotics/
+│   ├── Universal/
+│   └── Web/
+└── scripts/
+    ├── build-resumes.sh         # сборка всех PDF
+    └── validate_site.py         # проверка ссылок и структуры сайта
 ```
 
-Все резюме написаны в LaTeX (XeLaTeX). Общие данные (имя, телефон, email, город) вынесены в `Resumes/Common/Resume_Common.tex` — изменение в одном файле обновляет все резюме.
+## Локальная сборка
 
----
+Требуются XeLaTeX, пакет Polyglossia, расширения TeX Live и шрифты Liberation Serif/Sans/Mono.
 
-## Проекты на GitHub
+На Ubuntu/Debian:
 
-### Профессиональные и инженерные
-- [whitelist-bypass](https://github.com/vanya890/whitelist-bypass) — туннелирование трафика через видеозвонки для обхода белых списков
-- [RoboSim](https://github.com/vanya890/RoboSim) — симулятор робототехники (ROS/Gazebo/3D)
-- [SimWeb](https://github.com/vanya890/SimWeb) — EduRoboSim, 3D-симулятор на Tauri + React + Three.js
-- [VRSyncSite](https://github.com/vanya890/VRSyncSite) — VR-синхронизация и веб-порталы
-- [laravelShop](https://github.com/vanya890/laravelShop) — интернет-магазин на Laravel
-- [clover](https://github.com/vanya890/clover) — ROS-фреймворк для дронов PX4
-- [TurtleBot3-Lab](https://github.com/vanya890/TurtleBot3-Lab) — лабораторные с TurtleBot3
-- [CodyModTranslator](https://github.com/vanya890/CodyModTranslator) — CLI-переводчик модов (ESP/ESM)
-- [ST24-ProductHelper](https://github.com/vanya890/ST24-ProductHelper) — создание карточек товаров
-- [ST24-Check](https://github.com/vanya890/ST24-Check) — проверка данных ST24
-- [deepseek-web-search](https://github.com/vanya890/deepseek-web-search) — Codex-скилл для DeepSeek
-- [stroy-materiali-24-skill](https://github.com/vanya890/stroy-materiali-24-skill) — Agent Skill для магазина стройматериалов
-- [study-projects](https://github.com/vanya890/study-projects) — учебные проекты Мосполитеха
-- [CAWP](https://github.com/vanya890/CAWP) / [CQT](https://github.com/vanya890/CQT) — CodyAiWorldPlayer, SKSE-плагин для Skyrim
-- [AI_Study_Colab](https://github.com/vanya890/AI_Study_Colab) — учебные ноутбуки по AI
+```bash
+sudo apt-get update
+sudo apt-get install -y latexmk texlive-xetex texlive-lang-cyrillic texlive-latex-extra fonts-liberation
+./scripts/build-resumes.sh
+python3 scripts/validate_site.py site
+```
 
-### Игровые, личные и развлекательные
-- [minecraft-comes-alive](https://github.com/vanya890/minecraft-comes-alive) — Minecraft-мод: жители становятся людьми
-- [kazari-jump](https://github.com/vanya890/kazari-jump) — one-tap Telegram runner
-- [kazari-pulse](https://github.com/vanya890/kazari-pulse) — аркадная Telegram Mini App
-- [AIChatGame](https://github.com/vanya890/AIChatGame) — веб-чат с AI-персонажами
-- [DeNoiseDroid](https://github.com/vanya890/DeNoiseDroid) — шумоподавление для Android
+Сценарий собирает шесть PDF из исходников в `Resumes/*/*.tex`, размещает их в каталоге `site/` и запускает проверку внутренних ссылок и артефактов.
 
-## Планы
+## GitHub Actions
 
-- [ ] Адаптация резюме под конкретные вакансии (подгонка ключевых слов)
-- [ ] Добавление сопроводительных писем
-- [ ] Создание английской версии резюме
-- [ ] Портфолио с примерами проектов
+Workflow [Build resumes and deploy GitHub Pages](.github/workflows/pages.yml):
 
----
+- запускается при push в `main`, pull request и вручную через `workflow_dispatch`;
+- собирает все варианты PDF с помощью XeLaTeX;
+- проверяет внутренние ссылки, якоря и наличие PDF;
+- публикует статический сайт через GitHub Pages.
 
-## Контакты
+Для первого использования в **Settings → Pages → Build and deployment → Source** должен быть выбран **GitHub Actions**.
 
-- **Email:** vanya.kuzyk1@gmail.com
-- **Telegram:** @CODY890
-- **GitHub:** [github.com/vanya890](https://github.com/vanya890)
+## Образование
+
+- **Московский политехнический университет**, 09.03.01 «Информатика и вычислительная техника», специализация «Киберфизические системы», 2022–2026. Средний балл 5.0; ВКР по разработке образовательного 3D-симулятора робототехники защищена на «отлично».
+- **ГБПОУ «Образовательный комплекс „Юго-Запад“»**, 09.02.07 «Информационные системы и программирование», квалификация «Специалист по информационным системам», 2018–2022. Диплом с отличием.
+
+## Приватность
+
+Оригиналы дипломов, выписки из личного кабинета и старые версии резюме не хранятся в текущей публичной версии репозитория. Для подтверждения образования работодатель может запросить документы напрямую. Старые Git-коммиты могут сохранять прежние версии удалённых файлов; полная очистка истории требует отдельной процедуры переписывания Git history.

@@ -1,4 +1,4 @@
-# LaTeX временные файлы
+# LaTeX build artifacts
 *.aux
 *.log
 *.out
@@ -10,10 +10,14 @@
 *.blg
 *.fls
 *.fdb_latexmk
+*.xdv
 *.nav
 *.snm
 *.vrb
 
-# Системные файлы
+# Generated site output
+/site/
+
+# System files
 Thumbs.db
 .DS_Store
