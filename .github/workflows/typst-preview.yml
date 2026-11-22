@@ -22,7 +22,7 @@ jobs:
       - name: Compile test resume
         run: |
           mkdir -p dist
-          typst compile Resumes/Typst/preview.typ dist/Resume-Typst-preview.pdf
+          typst compile --root . Resumes/Typst/preview.typ dist/Resume-Typst-preview.pdf
       - name: Upload preview PDF
         uses: actions/upload-artifact@v4
         with:
