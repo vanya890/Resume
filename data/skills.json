@@ -98,6 +98,70 @@
           "context": "Базы данных учебного интернет-магазина"
         }
       ]
+    },
+    {
+      "id": "ai-agent-integration",
+      "name": "Интеграция AI-агентов и MCP",
+      "category": "AI и автоматизация",
+      "assessment": "pending",
+      "evidence": [
+        {
+          "project_id": "stroy-materiali-24-hub2",
+          "context": "Интеграции AI-сервисов, MCP-инструменты и автоматизация прикладных сценариев; уровень требует подтверждения личного вклада и практических примеров"
+        },
+        {
+          "project_id": "deepseek-web-search",
+          "context": "Инструмент поиска через веб-интерфейс DeepSeek для AI-агентов"
+        },
+        {
+          "project_id": "stroy-materiali-24-skill",
+          "context": "Agent Skill для работы с каталогом магазина"
+        }
+      ]
+    },
+    {
+      "id": "local-llm-deployment",
+      "name": "Развёртывание и настройка локальных LLM",
+      "category": "AI",
+      "assessment": "pending",
+      "evidence": [
+        {
+          "project_id": "codymodtranslator",
+          "context": "Локальные модели машинного перевода, CTranslate2 и CUDA"
+        },
+        {
+          "project_id": "stroy-materiali-24-hub2",
+          "context": "Интеграция с локальными AI-сервисами и ComfyUI; настройка моделей подтверждается пользовательским интервью"
+        }
+      ]
+    },
+    {
+      "id": "ai-workflow-automation",
+      "name": "Автоматизация рабочих процессов с AI",
+      "category": "AI и автоматизация",
+      "assessment": "pending",
+      "evidence": [
+        {
+          "project_id": "stroy-materiali-24-hub2",
+          "context": "Автоматизация генерации статей, карточек товаров и промоматериалов на основе товарных данных"
+        }
+      ]
+    },
+    {
+      "id": "structured-ai-output",
+      "name": "Структурированные ответы LLM и Function Calling",
+      "category": "AI",
+      "assessment": "pending",
+      "evidence": [
+        {
+          "project_id": "qsp-ai-generator",
+          "context": "Проверка и очистка структурированных ответов модели"
+        },
+        {
+          "project_id": "stroy-materiali-24-hub2",
+          "context": "Использование структурированных данных в генеративных сценариях; подробные контракты API требуют отдельной проверки"
+        }
+      ]
     }
   ]
 }
