@@ -67,3 +67,5 @@
 ]
 #v(0.4em)
 #align(center)[#text(size: 7pt, fill: muted)[Тестовая версия. Уровни навыков намеренно не указаны до подтверждения.] ]
+
+// Compile through CI with repository root enabled.
