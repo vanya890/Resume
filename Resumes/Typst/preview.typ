@@ -3,7 +3,7 @@
 #let projects = json("../../data/projects.json").projects.filter(p => p.visibility == "public")
 #let skills = json("../../data/skills.json").skills
 
-#set document(title: "Резюме — " + profile.full_name, author: profile.full_name, lang: "ru")
+#set document(title: "Резюме — " + profile.full_name, author: profile.full_name)
 #set page(paper: "a4", margin: (x: 17mm, y: 15mm), numbering: "1")
 #set text(font: "Liberation Sans", size: 8.7pt, lang: "ru", fill: rgb("#202938"))
 #set par(leading: 0.48em, justify: true)
