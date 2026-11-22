@@ -19,7 +19,7 @@ cp "$ROOT/favicon.svg" "$SITE_DIR/favicon.svg"
 cp "$ROOT/robots.txt" "$SITE_DIR/robots.txt"
 cp "$ROOT/sitemap.xml" "$SITE_DIR/sitemap.xml"
 mkdir -p "$SITE_DIR/data"
-cp "$ROOT/data/projects.json" "$SITE_DIR/data/projects.json"
+cp -R "$ROOT/data/." "$SITE_DIR/data/"
 
 for variant in AI_ML Data Engineer Robotics Universal Web; do
   source_name="${RESUMES[$variant]}"

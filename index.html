@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5f7fb">
+  <meta name="theme-color" content="#f5f7fb" media="(prefers-color-scheme: light)">
   <meta name="description" content="Портфолио и резюме Ивана Кузыка: разработка программного обеспечения, робототехника, AI/ML и киберфизические системы.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Иван Кузык — разработчик ПО и киберфизических систем">
@@ -14,7 +14,7 @@
   <title>Иван Кузык — разработчик ПО и киберфизических систем</title>
   <style>
     :root {
-      color-scheme: light;
+      color-scheme: light dark;
       --bg: #f5f7fb;
       --surface: #ffffff;
       --surface-muted: #eef2f8;
@@ -221,7 +221,17 @@
       .project-card, .resume-card, .education-card { box-shadow: none; break-inside: avoid; }
       a { color: black; }
     }
-  </style>
+@media (prefers-color-scheme: dark) {
+:root { --bg:#101521; --surface:#171f2e; --surface-muted:#202b3d; --ink:#edf2fb; --ink-soft:#c3cede; --muted:#9aa9bf; --line:#303d52; --brand:#8da7ff; --brand-dark:#a8baff; --teal:#62d0d0; --shadow:0 18px 50px rgba(0,0,0,.28); }
+body { background:radial-gradient(ellipse at 88% 0%,rgba(91,119,220,.16),transparent 32rem),var(--bg); }
+.site-header { background:rgba(16,21,33,.92); } .nav-links { background:var(--surface); }
+.profile-panel { background:linear-gradient(150deg,#1b2638,#172032); } .profile-icon { background:#293858;color:#b6c7ff; }
+.tag { background:#27385f;color:#dbe4ff; } .skill-tags .tag { background:var(--surface-muted);color:var(--ink-soft); }
+.focus-card { background:#0b111d; } .search-input { color:var(--ink);background:var(--surface);border-color:var(--line); }
+.note { background:#173337;color:#b8e7e2; } .button-primary { color:#101521;background:#a8baff; }
+.button-primary:hover { color:#101521;background:#c1ceff; } .button-secondary { color:var(--ink);background:var(--surface); }
+.filter-button[aria-pressed="true"] { color:#101521;background:#a8baff;border-color:#a8baff; } .skip-link { background:#edf2fb;color:#101521; }
+}  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти к содержимому</a>
@@ -549,5 +559,13 @@
     projectSearch.addEventListener('input', renderProjects);
     loadProjects();
   </script>
+<script>
+(() => {
+ const preference=window.matchMedia('(prefers-color-scheme: dark)');
+ const themeColor=document.querySelector('meta[name="theme-color"]');
+ const update=()=>themeColor?.setAttribute('content',preference.matches?'#101521':'#f5f7fb');
+ update(); preference.addEventListener?.('change',update);
+})();
+</script>
 </body>
 </html>

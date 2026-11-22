@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "assessment_scale": [
+    "confident-practical",
+    "working",
+    "basic",
+    "familiar"
+  ],
+  "skills": [
+    {
+      "id": "typescript",
+      "name": "TypeScript",
+      "category": "Разработка ПО",
+      "assessment": "pending",
+      "evidence": [
+        {
+          "project_id": "edurobosim",
+          "context": "Разработка интерфейса и прикладной логики симулятора"
+        },
+        {
+          "project_id": "kazari-jump",
+          "context": "Telegram Mini App"
+        }
+      ]
+    },
+    {
+      "id": "react",
+      "name": "React",
+      "category": "Разработка ПО",
+      "assessment": "pending",
+      "evidence": [
+        {
+          "project_id": "edurobosim",
+          "context": "Интерфейс desktop-симулятора"
+        },
+        {
+          "project_id": "qsp-ai-generator",
+          "context": "Интерфейс интерактивной RPG"
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "name": "Python",
+      "category": "Разработка ПО и автоматизация",
+      "assessment": "pending",
+      "evidence": [
+        {
+          "project_id": "codymodtranslator",
+          "context": "CLI, пакетная обработка и автоматизация перевода"
+        },
+        {
+          "project_id": "stroy-materiali-24-skill",
+          "context": "Реализация agent skill"
+        }
+      ]
+    },
+    {
+      "id": "robotics-simulation",
+      "name": "Робототехническое моделирование",
+      "category": "Робототехника",
+      "assessment": "pending",
+      "evidence": [
+        {
+          "project_id": "edurobosim",
+          "context": "Физика столкновений, сенсоры и виртуальная машина"
+        },
+        {
+          "project_id": "robosim",
+          "context": "Unity-проект конструктора и симулятора"
+        }
+      ]
+    },
+    {
+      "id": "llm-integration",
+      "name": "Интеграция LLM",
+      "category": "AI",
+      "assessment": "pending",
+      "evidence": [
+        {
+          "project_id": "qsp-ai-generator",
+          "context": "Интеграция Gemini и обработка структурированных ответов"
+        }
+      ]
+    },
+    {
+      "id": "sql",
+      "name": "SQL и реляционные базы данных",
+      "category": "Данные",
+      "assessment": "pending",
+      "evidence": [
+        {
+          "project_id": "qsp-ai-generator",
+          "context": "SQLite в игровом приложении"
+        },
+        {
+          "project_id": "laravelshop",
+          "context": "Базы данных учебного интернет-магазина"
+        }
+      ]
+    }
+  ]
+}
