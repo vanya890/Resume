@@ -285,7 +285,6 @@
           "url": "https://github.com/vanya890/Stroy-Materiali-24-HUB2"
         }
       ],
-      "idempotency_note": "Repository-reviewed; selected source files inspected on 2026-11-23. Full audit, local execution and tests were not performed.",
       "visibility": "public",
       "evidence_status": "repository-reviewed"
     }
