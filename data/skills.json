@@ -131,7 +131,7 @@
         },
         {
           "project_id": "stroy-materiali-24-recommendations",
-          "context": "On-demand ChatGPT product-content audit workflow integrated with GitHub Actions and structured reports"
+          "context": "Автоматизация экспорта данных каталога и Авито и подготовки структурированного входного пакета для on-demand ChatGPT content review через GitHub Actions"
         }
       ]
     },
