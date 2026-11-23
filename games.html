@@ -58,7 +58,7 @@
         if(!response.ok)throw new Error('HTTP '+response.status);
         const data=await response.json();
         if(!Array.isArray(data.projects))throw new Error('Некорректный реестр проектов');
-        const games=data.projects.map(project=>({...project,playLink:(project.links||[]).find(link=>/^(играть|play)$/i.test(link.label||''))}))
+        const games=data.projects.map(project=>({...project,playLink:(project.links||[]).find(link=>/^(играть|play|демо|demo)$/i.test(link.label||''))}))
           .filter(project=>project.playLink&&project.visibility==='public'&&/^https:\/\//i.test(project.playLink.url));
         count.textContent=games.length+' '+(games.length===1?'игра доступна':games.length>=2&&games.length<=4?'игры доступны':'игр доступно');
         if(!games.length){grid.innerHTML='<div class="empty">Пока нет опубликованных игр. Новые игры появятся здесь автоматически после добавления ссылки «Играть» в реестр проектов.</div>';return}
