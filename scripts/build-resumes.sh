@@ -15,6 +15,7 @@ declare -A RESUMES=(
 
 mkdir -p "$SITE_DIR"
 cp "$ROOT/index.html" "$SITE_DIR/index.html"
+cp "$ROOT/games.html" "$SITE_DIR/games.html"
 cp "$ROOT/favicon.svg" "$SITE_DIR/favicon.svg"
 cp "$ROOT/robots.txt" "$SITE_DIR/robots.txt"
 cp "$ROOT/sitemap.xml" "$SITE_DIR/sitemap.xml"

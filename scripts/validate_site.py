@@ -44,34 +44,49 @@ def main() -> int:
     if not projects_file.is_file():
         fail(f"Missing {projects_file}")
 
-    html = index_file.read_text(encoding="utf-8")
-    parser = SiteParser()
-    parser.feed(html)
+    html_files = sorted(site_dir.glob("*.html"))
+    if site_dir / "games.html" not in html_files:
+        fail("Missing games.html")
 
-    duplicates = sorted({item for item in parser.ids if parser.ids.count(item) > 1})
-    if duplicates:
-        fail(f"Duplicate HTML ids: {', '.join(duplicates)}")
+    page_ids: dict[Path, set[str]] = {}
+    parsed_pages: list[tuple[Path, SiteParser]] = []
+    for html_file in html_files:
+        parser = SiteParser()
+        parser.feed(html_file.read_text(encoding="utf-8"))
+        duplicates = sorted({item for item in parser.ids if parser.ids.count(item) > 1})
+        if duplicates:
+            fail(f"Duplicate HTML ids in {html_file.name}: {', '.join(duplicates)}")
+        page_ids[html_file.resolve()] = set(parser.ids)
+        parsed_pages.append((html_file, parser))
 
-    ids = set(parser.ids)
     missing_anchors: list[str] = []
     missing_files: list[str] = []
+    total_links = 0
 
-    for href in parser.hrefs:
-        parsed = urlsplit(href)
-        if parsed.scheme or parsed.netloc:
-            continue
-        if href.startswith("mailto:") or href.startswith("tel:") or href.startswith("javascript:"):
-            continue
-        if parsed.path:
-            target = (site_dir / parsed.path.lstrip("/")).resolve()
+    for html_file, parser in parsed_pages:
+        for href in parser.hrefs:
+            total_links += 1
+            parsed = urlsplit(href)
+            if parsed.scheme or parsed.netloc:
+                continue
+            if href.startswith(("mailto:", "tel:", "javascript:")):
+                continue
+
+            target = html_file.parent / parsed.path if parsed.path else html_file
+            if parsed.path.startswith("/"):
+                target = site_dir / parsed.path.lstrip("/")
+            target = target.resolve()
             try:
                 target.relative_to(site_dir)
             except ValueError:
-                fail(f"Local link escapes site directory: {href}")
-            if not target.exists():
-                missing_files.append(href)
-        if parsed.fragment and parsed.fragment not in ids:
-            missing_anchors.append(href)
+                fail(f"Local link escapes site directory: {html_file.name}: {href}")
+
+            if parsed.path and not target.exists():
+                missing_files.append(f"{html_file.name}: {href}")
+            if parsed.fragment and target.suffix == ".html":
+                target_ids = page_ids.get(target, set())
+                if parsed.fragment not in target_ids:
+                    missing_anchors.append(f"{html_file.name}: {href}")
 
     if missing_files:
         fail(f"Broken local links: {', '.join(missing_files)}")
@@ -144,7 +159,7 @@ def main() -> int:
 
     print(
         f"Site validation passed: {len(projects)} projects, "
-        f"{len(expected_pdfs)} PDF resumes, {len(parser.hrefs)} local/external links."
+        f"{len(expected_pdfs)} PDF resumes, {total_links} local/external links across {len(html_files)} pages."
     )
     return 0
 
