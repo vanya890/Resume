@@ -20,6 +20,10 @@
         {
           "project_id": "kazari-jump",
           "context": "Telegram Mini App"
+        },
+        {
+          "project_id": "ai-gpt-roleplay-platform",
+          "context": "React/TypeScript AI roleplay platform, structured API contracts, local memory and responsive interface"
         }
       ]
     },
@@ -36,6 +40,10 @@
         {
           "project_id": "qsp-ai-generator",
           "context": "Интерфейс интерактивной RPG"
+        },
+        {
+          "project_id": "ai-gpt-roleplay-platform",
+          "context": "React 19 interface for AI roleplay platform, character catalog and conversation workspace"
         }
       ]
     },
@@ -52,6 +60,10 @@
         {
           "project_id": "stroy-materiali-24-skill",
           "context": "Реализация agent skill"
+        },
+        {
+          "project_id": "stroy-materiali-24-recommendations",
+          "context": "Python monitoring package, Avito and shop-feed integrations, quality rules, reporting and automated tests"
         }
       ]
     },
@@ -84,6 +96,10 @@
         {
           "project_id": "stroy-materiali-24-hub2",
           "context": "Интеграция Gemini и OpenAI-совместимых API в прикладное приложение"
+        },
+        {
+          "project_id": "ai-gpt-roleplay-platform",
+          "context": "OpenAI-compatible Chat Completions integration with strict JSON Schema and Zod response validation"
         }
       ]
     },
@@ -112,6 +128,46 @@
         {
           "project_id": "stroy-materiali-24-hub2",
           "context": "Автоматизация генерации статей, карточек товаров и промоматериалов на основе товарных данных"
+        },
+        {
+          "project_id": "stroy-materiali-24-recommendations",
+          "context": "On-demand ChatGPT product-content audit workflow integrated with GitHub Actions and structured reports"
+        }
+      ]
+    },
+    {
+      "id": "cpp",
+      "name": "C++",
+      "category": "Разработка системного ПО",
+      "assessment": "pending",
+      "evidence": [
+        {
+          "project_id": "maicord-enhanced-fork",
+          "context": "Изменения нативной аудиоподсистемы, Opus pipeline, CDN media transport и тестов"
+        }
+      ]
+    },
+    {
+      "id": "github-actions",
+      "name": "GitHub Actions и CI/CD",
+      "category": "Автоматизация разработки",
+      "assessment": "pending",
+      "evidence": [
+        {
+          "project_id": "stroy-materiali-24-recommendations",
+          "context": "Scheduled/manual monitoring, CI, test automation, dashboard and AI-review workflows"
+        }
+      ]
+    },
+    {
+      "id": "rest-api-oauth",
+      "name": "Интеграция REST API и OAuth2",
+      "category": "Интеграции и автоматизация",
+      "assessment": "pending",
+      "evidence": [
+        {
+          "project_id": "stroy-materiali-24-recommendations",
+          "context": "Read-only Avito Business API adapter, OAuth2 Client Credentials and Stats API v2 normalization"
         }
       ]
     }
