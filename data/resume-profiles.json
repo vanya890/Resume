@@ -10,7 +10,9 @@
         "qsp-ai-generator",
         "codymodtranslator",
         "stroy-materiali-24-skill",
-        "deepseek-web-search"
+        "deepseek-web-search",
+        "ai-gpt-roleplay-platform",
+        "stroy-materiali-24-recommendations"
       ],
       "status": "draft"
     },
@@ -20,7 +22,8 @@
       "target": "Обработка данных, SQL, Python и визуализация",
       "project_ids": [
         "codymodtranslator",
-        "qsp-ai-generator"
+        "qsp-ai-generator",
+        "stroy-materiali-24-recommendations"
       ],
       "status": "draft"
     },
@@ -32,7 +35,10 @@
         "edurobosim",
         "codymodtranslator",
         "laravelshop",
-        "denoisedroid"
+        "denoisedroid",
+        "ai-gpt-roleplay-platform",
+        "stroy-materiali-24-recommendations",
+        "maicord-enhanced-fork"
       ],
       "status": "draft"
     },
@@ -55,7 +61,10 @@
         "qsp-ai-generator",
         "codymodtranslator",
         "laravelshop",
-        "denoisedroid"
+        "denoisedroid",
+        "ai-gpt-roleplay-platform",
+        "stroy-materiali-24-recommendations",
+        "maicord-enhanced-fork"
       ],
       "status": "draft"
     },
@@ -67,7 +76,9 @@
         "qsp-ai-generator",
         "laravelshop",
         "kazari-jump",
-        "kazari-pulse"
+        "kazari-pulse",
+        "ai-gpt-roleplay-platform",
+        "stroy-materiali-24-recommendations"
       ],
       "status": "draft"
     }
