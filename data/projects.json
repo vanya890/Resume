@@ -287,6 +287,120 @@
       ],
       "visibility": "public",
       "evidence_status": "repository-reviewed"
+    },
+    {
+      "id": "ai-gpt-roleplay-platform",
+      "title": "AI-GPT-Game — AI Roleplay RPG Platform",
+      "category": "AI и интерактивные приложения",
+      "period": "Личный проект · ноябрь 2026 — настоящее время",
+      "description": "Браузерная платформа для интерактивного roleplay с AI-персонажами и пользовательскими мирами. Текущая реализация — рабочий фундамент с каталогом персонажей, диалогами, локальной памятью, импортом контента и подключением OpenAI-совместимых API; полноценный World Engine остаётся направлением дальнейшей разработки.",
+      "highlights": [
+        "Создана основа приложения на React и TypeScript с локальным хранилищем IndexedDB (Dexie), диалогами и настройками OpenAI-compatible API",
+        "Реализован строгий структурированный контракт ответов модели с JSON Schema и проверкой Zod до сохранения ответа и воспоминаний",
+        "Добавлен локальный поиск воспоминаний на основе BM25-подобного ранжирования без embeddings и внешнего векторного сервиса",
+        "Разработаны импорт и экспорт Character Card V2/V3, PNG metadata и CHARX, поддержка lorebook / World Info и сохранение неизвестных полей для обратимого экспорта",
+        "Добавлены полная резервная копия локальных данных, проверка структуры и связей перед импортом",
+        "Улучшен адаптивный интерфейс: главный экран и каталоги миров/персонажей, фокус на активном чате, progressive disclosure и единая основная область прокрутки; добавлены Playwright browser regression tests и дизайн-система MYTHOS"
+      ],
+      "stack": [
+        "React 19",
+        "TypeScript",
+        "Vite",
+        "Dexie",
+        "IndexedDB",
+        "Zod",
+        "OpenAI-compatible API",
+        "Vitest",
+        "Playwright",
+        "GitHub Actions",
+        "GitHub Pages"
+      ],
+      "links": [
+        {
+          "label": "Исходный код",
+          "url": "https://github.com/vanya890/AI-GPT-Game"
+        },
+        {
+          "label": "Демо",
+          "url": "https://vanya890.github.io/AI-GPT-Game/"
+        }
+      ],
+      "visibility": "public",
+      "evidence_status": "repository-reviewed"
+    },
+    {
+      "id": "stroy-materiali-24-recommendations",
+      "title": "Stroy-Materiali-24 Recommendations — мониторинг магазина и аналитика Авито",
+      "category": "AI и бизнес-автоматизация",
+      "period": "Личный проект · ноябрь 2026 — настоящее время",
+      "description": "Python-система мониторинга качества товарных карточек интернет-магазина и эффективности объявлений Авито. Собирает данные через read-only интеграции, формирует рекомендации и отчёты, сохраняет историю показателей и публикует privacy-filtered аналитическую панель. Дополнена запускаемым по запросу AI-аудитом товарного контента через GitHub Actions.",
+      "highlights": [
+        "Реализован read-only Avito Business API adapter с OAuth2, загрузкой объявлений и нормализацией метрик Stats API v2",
+        "Добавлена загрузка каталога через InSales RSS 2.0 / Google Merchant XML и YML-фиды; в README зафиксировано чтение 1 539 товарных карточек и 454 объявлений Авито в проверке интеграций",
+        "Созданы правила контроля полноты карточек: название, описание, изображения и цена; реализованы рекомендации по низкой конверсии просмотров в контакты",
+        "Добавлены Telegram-отчёты, сохранение снимков мониторинга и ежедневные/ручные GitHub Actions workflows с unit-тестами",
+        "Разработана публичная аналитическая панель с экспортом через allowlist полей, исключающим секреты интеграций из публикуемого набора",
+        "Добавлен on-demand workflow для структурированного ChatGPT-аудита товарного контента с сохранением отчётов и проверяемых ссылок на объявления"
+      ],
+      "stack": [
+        "Python",
+        "pytest",
+        "Avito Business API",
+        "OAuth2",
+        "InSales RSS",
+        "Google Merchant XML",
+        "YML",
+        "Telegram Bot API",
+        "GitHub Actions",
+        "GitHub Pages"
+      ],
+      "links": [
+        {
+          "label": "Исходный код",
+          "url": "https://github.com/vanya890/Stroy-Materiali-24_Recomendations"
+        },
+        {
+          "label": "Аналитическая панель",
+          "url": "https://vanya890.github.io/Stroy-Materiali-24_Recomendations/"
+        }
+      ],
+      "visibility": "public",
+      "evidence_status": "repository-reviewed"
+    },
+    {
+      "id": "maicord-enhanced-fork",
+      "title": "MaiCord — Enhanced Fork",
+      "category": "Системное и desktop-программное обеспечение",
+      "period": "Вклад в open-source fork · ноябрь 2026 — настоящее время",
+      "description": "Самостоятельно сопровождаемый fork нативного Discord-клиента MaiCord, изначально созданного maj113. Мой вклад сосредоточен на аудиоподсистеме, устойчивости загрузки медиа, тестировании и автоматизации синхронизации с upstream; базовая архитектура и исходная функциональность клиента принадлежат upstream-проекту.",
+      "highlights": [
+        "Добавлен двухканальный захват микрофона с проверкой реальной раскладки каналов на Windows WASAPI и Linux PulseAudio; mono-only endpoints отклоняются в stereo mode",
+        "Реализован локальный мониторинг обработанного исходящего Opus-аудио в Voice & Video: учитываются voice processing, VAD и Push-to-Talk; тестовый звук вне звонка не отправляется в канал, stereo-каналы сохраняются",
+        "Улучшена устойчивость загрузки изображений и медиа через ограниченные повторы transient CDN/network failures, обработку усечённых ответов и зависших передач, cooldown для проблемных keep-alive соединений и диагностическое логирование",
+        "Добавлены и адаптированы тесты аудиопайплайна, stereo capture и microphone monitoring",
+        "Настроен контролируемый upstream-sync workflow и доработаны CI-сценарии сборки и повторного использования артефактов"
+      ],
+      "stack": [
+        "C++",
+        "WASAPI",
+        "PulseAudio",
+        "Opus",
+        "Native desktop audio",
+        "GitHub Actions",
+        "CMake"
+      ],
+      "links": [
+        {
+          "label": "Мой fork",
+          "url": "https://github.com/vanya890/MaiCord"
+        },
+        {
+          "label": "Исходный upstream",
+          "url": "https://github.com/maj113/MaiCord"
+        }
+      ],
+      "visibility": "public",
+      "evidence_status": "repository-reviewed"
     }
   ]
 }
